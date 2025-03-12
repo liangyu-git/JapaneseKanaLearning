@@ -184,7 +184,7 @@ export default function Page() {
             </div>
           )}
           {showAnswer && (
-            <button style={buttonStyle} onClick={loadNewWord}>
+            <button style={buttonStyle} onClick={() => loadNewWord()}>
               下一題
             </button>
           )}
