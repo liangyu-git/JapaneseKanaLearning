@@ -1,103 +1,193 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState, useEffect } from "react";
+
+type Word = {
+  type: string;
+  kanji: string;
+  kana: string;
+  romaji: string;
+  meaning: string;
+};
+
+export default function Page() {
+  const [mode, setMode] = useState<string>("");
+  const [data, setData] = useState<Word[]>([]);
+  const [filteredData, setFilteredData] = useState<Word[]>([]);
+  const [currentWord, setCurrentWord] = useState<Word | null>(null);
+  const [userInput, setUserInput] = useState<string>("");
+  const [feedback, setFeedback] = useState<string>("");
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
+
+  // 從 public 資料夾中載入 data.json
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data: Word[]) => setData(data))
+      .catch((err) => console.error("Error loading data.json:", err));
+  }, []);
+
+  // 選擇學習模式，並根據模式過濾資料
+  const startMode = (selectedMode: string) => {
+    setMode(selectedMode);
+    let filtered: Word[];
+    if (selectedMode === "平假名") {
+      filtered = data.filter((item) => item.type === "平假名");
+    } else if (selectedMode === "片假名") {
+      filtered = data.filter((item) => item.type === "片假名");
+    } else {
+      filtered = data;
+    }
+    setFilteredData(filtered);
+    loadNewWord(filtered);
+  };
+
+  // 隨機抽取一筆資料
+  const loadNewWord = (filtered: Word[] = filteredData) => {
+    setUserInput("");
+    setFeedback("");
+    setShowAnswer(false);
+    if (filtered.length === 0) return;
+    const randomIndex = Math.floor(Math.random() * filtered.length);
+    setCurrentWord(filtered[randomIndex]);
+  };
+
+  // 檢查使用者輸入的羅馬拼音
+  const checkAnswer = () => {
+    if (!currentWord) return;
+    const userAns = userInput.trim().toLowerCase();
+    const correct = currentWord.romaji.toLowerCase();
+    if (userAns === correct) {
+      setFeedback("正確！");
+    } else {
+      setFeedback(`錯誤！正確答案是： ${currentWord.romaji}`);
+    }
+    setShowAnswer(true);
+  };
+
+  const backToMenu = () => {
+    setMode("");
+    setFilteredData([]);
+    setCurrentWord(null);
+    setFeedback("");
+    setUserInput("");
+  };
+
+  // inline CSS styles
+  const containerStyle = {
+    maxWidth: "600px",
+    margin: "20px auto",
+    background: "#fff",
+    padding: "20px",
+    borderRadius: "8px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+    textAlign: "center" as const,
+  };
+
+  const wordStyle = {
+    margin: "20px 0",
+  };
+
+  const inputStyle = {
+    padding: "8px",
+    fontSize: "1em",
+    width: "60%",
+    marginRight: "10px",
+  };
+
+  const buttonStyle = {
+    padding: "10px 20px",
+    fontSize: "1em",
+    margin: "10px",
+    cursor: "pointer",
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      {mode === "" ? (
+        <div style={containerStyle}>
+          <h1>選擇學習模式</h1>
+          <button style={buttonStyle} onClick={() => startMode("平假名")}>
+            平假名學習
+          </button>
+          <button style={buttonStyle} onClick={() => startMode("片假名")}>
+            片假名學習
+          </button>
+          <button style={buttonStyle} onClick={() => startMode("混合")}>
+            混合模式
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      ) : (
+        <div style={containerStyle}>
+          <button style={buttonStyle} onClick={backToMenu}>
+            返回選單
+          </button>
+          <h1>{mode} 學習</h1>
+          {currentWord && (
+            <div style={wordStyle}>
+              {/* 若有漢字，則上方顯示假名，下方顯示漢字；若無，則只在漢字區顯示假名 */}
+              {currentWord.kanji ? (
+                <>
+                  <p style={{ fontSize: "1.8em", fontWeight: "bold" }}>
+                    {currentWord.kana}
+                  </p>
+                  <p style={{ fontSize: "1.5em" }}>{currentWord.kanji}</p>
+                </>
+              ) : (
+                <>
+                  <p style={{ fontSize: "1.8em", fontWeight: "bold" }}></p>
+                  <p style={{ fontSize: "1.5em" }}>{currentWord.kana}</p>
+                </>
+              )}
+              {/* 繁體中文解釋 */}
+              <p style={{ fontSize: "1.2em", marginTop: "10px" }}>
+                {currentWord.meaning}
+              </p>
+            </div>
+          )}
+          <div>
+            <input
+              type="text"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              placeholder="請輸入羅馬拼音"
+              style={inputStyle}
+            />
+            <button style={buttonStyle} onClick={checkAnswer}>
+              檢查答案
+            </button>
+          </div>
+          {showAnswer && (
+            <div
+              style={{
+                fontSize: "1.5em",
+                margin: "20px 0",
+                color: "#333",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {feedback}
+              <br />
+              {currentWord && currentWord.kanji ? (
+                <>
+                  {currentWord.kana}
+                  <br />
+                  {currentWord.kanji} ({currentWord.romaji})
+                </>
+              ) : (
+                <>
+                  {currentWord && currentWord.kana} ({currentWord.romaji})
+                </>
+              )}
+            </div>
+          )}
+          {showAnswer && (
+            <button style={buttonStyle} onClick={loadNewWord}>
+              下一題
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
