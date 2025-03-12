@@ -168,17 +168,19 @@ export default function Page() {
             >
               {feedback}
               <br />
-              {currentWord && currentWord.kanji ? (
-                <>
-                  {currentWord.kana}
-                  <br />
-                  {currentWord.kanji} ({currentWord.romaji})
-                </>
-              ) : (
-                <>
-                  {currentWord && currentWord.kana} ({currentWord.romaji})
-                </>
-              )}
+              {currentWord ? (
+                currentWord.kanji ? (
+                  <>
+                    {currentWord.kana}
+                    <br />
+                    {currentWord.kanji} ({currentWord.romaji})
+                  </>
+                ) : (
+                  <>
+                    {currentWord.kana} ({currentWord.romaji})
+                  </>
+                )
+              ) : null}
             </div>
           )}
           {showAnswer && (
