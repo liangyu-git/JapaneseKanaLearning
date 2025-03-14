@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 type Word = {
   type: string;
@@ -42,7 +42,7 @@ export default function Page() {
   }, []);
 
   // Helper: highlight differences between user answer and correct answer
-  function highlightDiff(user: string, correct: string): JSX.Element {
+  function highlightDiff(user: string, correct: string): React.ReactElement {
     const result = [];
     const len = Math.max(user.length, correct.length);
     for (let i = 0; i < len; i++) {
