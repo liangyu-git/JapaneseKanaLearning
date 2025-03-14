@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type Word = {
   type: string;
@@ -16,7 +16,6 @@ type IncorrectItem = {
 };
 
 export default function Page() {
-  // 定義各階段：modeSelection, setup, practice, review
   const [phase, setPhase] = useState<string>("modeSelection");
   const [mode, setMode] = useState<string>("");
   const [data, setData] = useState<Word[]>([]);
@@ -28,8 +27,11 @@ export default function Page() {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const [incorrectList, setIncorrectList] = useState<IncorrectItem[]>([]);
   const [questionCountInput, setQuestionCountInput] = useState<string>("");
+  const [confirmDisabled, setConfirmDisabled] = useState<boolean>(false);
 
-  // 從 public/data.json 載入資料庫
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Load data from public/data.json
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
@@ -37,7 +39,7 @@ export default function Page() {
       .catch((err) => console.error("Error loading data.json:", err));
   }, []);
 
-  // 模式選擇後，根據模式過濾資料並進入設定題數階段
+  // Start mode: filter data and move to the setup phase
   const startMode = (selectedMode: string) => {
     setMode(selectedMode);
     let filtered: Word[] = [];
@@ -52,25 +54,43 @@ export default function Page() {
     setPhase("setup");
   };
 
-  // 設定題目數量並建立本次練習題目（不重複）
+  // Set up the session with a specified number of non-repeating questions
   const startSession = () => {
     const count = parseInt(questionCountInput);
     if (isNaN(count) || count <= 0) {
       alert("請輸入有效的題目數量");
       return;
     }
-    // 若輸入題數超過可用題數，就取可用題數
     const total = Math.min(count, filteredData.length);
-    // 隨機洗牌後取前 total 筆
+    // Shuffle and take the first "total" questions
     const shuffled = [...filteredData].sort(() => Math.random() - 0.5);
     const session = shuffled.slice(0, total);
     setSessionQuestions(session);
     setCurrentIndex(0);
     setIncorrectList([]);
     setPhase("practice");
+    // Reset answer state
+    setShowAnswer(false);
+    setConfirmDisabled(false);
+    setUserInput("");
+    setTimeout(() => inputRef.current?.focus(), 0);
   };
 
-  // 檢查使用者答案
+  // Move to the next question (or review if finished)
+  const nextQuestion = () => {
+    if (currentIndex + 1 >= sessionQuestions.length) {
+      setPhase("review");
+    } else {
+      setCurrentIndex(currentIndex + 1);
+      setUserInput("");
+      setFeedback("");
+      setShowAnswer(false);
+      setConfirmDisabled(false);
+      setTimeout(() => inputRef.current?.focus(), 0);
+    }
+  };
+
+  // Check the answer and disable the button
   const checkAnswer = () => {
     if (!sessionQuestions[currentIndex]) return;
     const current = sessionQuestions[currentIndex];
@@ -81,26 +101,14 @@ export default function Page() {
       resultFeedback = "正確！";
     } else {
       resultFeedback = `錯誤！正確答案是： ${current.romaji}`;
-      // 若答錯，加入錯題回顧清單
       setIncorrectList((prev) => [...prev, { question: current, userAnswer: userInput }]);
     }
     setFeedback(resultFeedback);
     setShowAnswer(true);
+    setConfirmDisabled(true);
   };
 
-  // 進入下一題，若已到最後則進入回顧階段
-  const nextQuestion = () => {
-    if (currentIndex + 1 >= sessionQuestions.length) {
-      setPhase("review");
-    } else {
-      setCurrentIndex(currentIndex + 1);
-      setUserInput("");
-      setFeedback("");
-      setShowAnswer(false);
-    }
-  };
-
-  // 返回模式選單，重置所有狀態
+  // Return to main menu and reset state
   const backToMenu = () => {
     setPhase("modeSelection");
     setMode("");
@@ -111,9 +119,23 @@ export default function Page() {
     setUserInput("");
     setIncorrectList([]);
     setQuestionCountInput("");
+    setShowAnswer(false);
+    setConfirmDisabled(false);
   };
 
-  // 外層主要容器，置中畫面且設定背景與字色
+  // Handle keyboard events on the input field
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (!showAnswer && !confirmDisabled) {
+        checkAnswer();
+      } else if (showAnswer) {
+        nextQuestion();
+      }
+    }
+  };
+
+  // Styles
   const mainContainerStyle = {
     display: "flex",
     flexDirection: "column" as const,
@@ -125,7 +147,6 @@ export default function Page() {
     padding: "10px",
   };
 
-  // 內部卡片樣式
   const containerStyle = {
     maxWidth: "600px",
     width: "100%",
@@ -155,7 +176,6 @@ export default function Page() {
     cursor: "pointer",
   };
 
-  // 根據 phase 渲染不同介面
   return (
     <div style={mainContainerStyle}>
       {phase === "modeSelection" && (
@@ -202,7 +222,6 @@ export default function Page() {
             {mode} 學習 - 題目 {currentIndex + 1} / {sessionQuestions.length}
           </h1>
           <div style={wordStyle}>
-            {/* 若有漢字，則上方顯示假名，下方顯示漢字；若無，則只顯示假名於漢字位置 */}
             {sessionQuestions[currentIndex].kanji ? (
               <>
                 <p style={{ fontSize: "1.8em", fontWeight: "bold" }}>
@@ -227,12 +246,14 @@ export default function Page() {
           <div>
             <input
               type="text"
+              ref={inputRef}
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder="請輸入羅馬拼音"
               style={inputStyle}
             />
-            <button style={buttonStyle} onClick={checkAnswer}>
+            <button style={buttonStyle} onClick={checkAnswer} disabled={confirmDisabled}>
               檢查答案
             </button>
           </div>
