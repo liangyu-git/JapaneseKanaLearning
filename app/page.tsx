@@ -16,6 +16,7 @@ type IncorrectItem = {
 };
 
 export default function Page() {
+  // Phases: modeSelection, setup, practice, review, and repractice
   const [phase, setPhase] = useState<string>("modeSelection");
   const [mode, setMode] = useState<string>("");
   const [data, setData] = useState<Word[]>([]);
@@ -28,6 +29,7 @@ export default function Page() {
   const [incorrectList, setIncorrectList] = useState<IncorrectItem[]>([]);
   const [questionCountInput, setQuestionCountInput] = useState<string>("");
   const [confirmDisabled, setConfirmDisabled] = useState<boolean>(false);
+  const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -39,7 +41,23 @@ export default function Page() {
       .catch((err) => console.error("Error loading data.json:", err));
   }, []);
 
-  // Mode selection: filter data and move to setup phase
+  // Helper: highlight differences between user answer and correct answer
+  function highlightDiff(user: string, correct: string): JSX.Element {
+    const result = [];
+    const len = Math.max(user.length, correct.length);
+    for (let i = 0; i < len; i++) {
+      const uChar = user[i] || "";
+      const cChar = correct[i] || "";
+      if (uChar.toLowerCase() === cChar.toLowerCase()) {
+        result.push(<span key={i}>{uChar}</span>);
+      } else {
+        result.push(<span key={i} style={{ color: "red" }}>{uChar || "_"}</span>);
+      }
+    }
+    return <>{result}</>;
+  }
+
+  // Mode selection: filter data and go to setup phase
   const startMode = (selectedMode: string) => {
     setMode(selectedMode);
     let filtered: Word[] = [];
@@ -54,7 +72,7 @@ export default function Page() {
     setPhase("setup");
   };
 
-  // Set up the session with a specified number of non-repeating questions
+  // Set up the session: specify number of questions (non-repeating)
   const startSession = () => {
     const count = parseInt(questionCountInput);
     if (isNaN(count) || count <= 0) {
@@ -68,28 +86,16 @@ export default function Page() {
     setCurrentIndex(0);
     setIncorrectList([]);
     setPhase("practice");
+    // Reset states for a fresh session
     setShowAnswer(false);
     setConfirmDisabled(false);
     setUserInput("");
     setFeedback("");
+    setLastAnswerCorrect(null);
     setTimeout(() => inputRef.current?.focus(), 0);
   };
 
-  // Move to the next question (or review phase if finished)
-  const nextQuestion = () => {
-    if (currentIndex + 1 >= sessionQuestions.length) {
-      setPhase("review");
-    } else {
-      setCurrentIndex(currentIndex + 1);
-      setUserInput("");
-      setFeedback("");
-      setShowAnswer(false);
-      setConfirmDisabled(false);
-      setTimeout(() => inputRef.current?.focus(), 0);
-    }
-  };
-
-  // Check answer, disable confirm button and show feedback with animation
+  // Check the answer and update feedback (differs for practice and repractice)
   const checkAnswer = () => {
     if (!sessionQuestions[currentIndex]) return;
     const current = sessionQuestions[currentIndex];
@@ -98,16 +104,89 @@ export default function Page() {
     let resultFeedback = "";
     if (userAns === correct) {
       resultFeedback = "正確！";
+      setLastAnswerCorrect(true);
     } else {
       resultFeedback = `錯誤！正確答案是： ${current.romaji}`;
-      setIncorrectList((prev) => [...prev, { question: current, userAnswer: userInput }]);
+      setLastAnswerCorrect(false);
+      if (phase === "practice") {
+        setIncorrectList((prev) => [...prev, { question: current, userAnswer: userInput }]);
+      } else if (phase === "repractice") {
+        // Update latest answer for the reattempted word.
+        setIncorrectList((prev) =>
+          prev.map((item) =>
+            item.question.romaji === current.romaji ? { question: current, userAnswer: userInput } : item
+          )
+        );
+      }
     }
     setFeedback(resultFeedback);
     setShowAnswer(true);
     setConfirmDisabled(true);
   };
 
-  // Return to main menu and reset state
+  // Proceed to the next question or end session
+  const nextQuestion = () => {
+    if (phase === "repractice") {
+      if (lastAnswerCorrect) {
+        // Remove correctly answered question from sessionQuestions and incorrectList
+        const newSession = sessionQuestions.filter((_, idx) => idx !== currentIndex);
+        setSessionQuestions(newSession);
+        setIncorrectList((prev) =>
+          prev.filter((item) => item.question.romaji !== sessionQuestions[currentIndex].romaji)
+        );
+        if (newSession.length === 0) {
+          setPhase("review");
+          return;
+        } else {
+          setCurrentIndex(0);
+        }
+      } else {
+        // If wrong, simply move to next (cycle through questions)
+        setCurrentIndex((prev) => (prev + 1) % sessionQuestions.length);
+      }
+      setUserInput("");
+      setFeedback("");
+      setShowAnswer(false);
+      setConfirmDisabled(false);
+      setLastAnswerCorrect(null);
+      setTimeout(() => inputRef.current?.focus(), 0);
+      return;
+    }
+
+    // For normal practice mode
+    if (currentIndex + 1 >= sessionQuestions.length) {
+      setPhase("review");
+    } else {
+      setCurrentIndex(currentIndex + 1);
+    }
+    setUserInput("");
+    setFeedback("");
+    setShowAnswer(false);
+    setConfirmDisabled(false);
+    setTimeout(() => inputRef.current?.focus(), 0);
+  };
+
+  // Early exit from practice: go directly to review phase
+  const earlyExit = () => {
+    setPhase("review");
+  };
+
+  // Repractice incorrect words (if any)
+  const repracticeIncorrect = () => {
+    if (incorrectList.length === 0) return;
+    const reSession = incorrectList.map((item) => item.question);
+    setSessionQuestions(reSession);
+    setCurrentIndex(0);
+    setPhase("repractice");
+    setUserInput("");
+    setFeedback("");
+    setShowAnswer(false);
+    setConfirmDisabled(false);
+    setLastAnswerCorrect(null);
+    setTimeout(() => inputRef.current?.focus(), 0);
+  };
+
+  // Return to main menu and reset all states
   const backToMenu = () => {
     setPhase("modeSelection");
     setMode("");
@@ -120,9 +199,10 @@ export default function Page() {
     setQuestionCountInput("");
     setShowAnswer(false);
     setConfirmDisabled(false);
+    setLastAnswerCorrect(null);
   };
 
-  // Handle keyboard events: Enter or Space to confirm or move to next question
+  // Handle keyboard events: Enter or Space to check answer or go next
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -134,7 +214,7 @@ export default function Page() {
     }
   };
 
-  // Styles for main container, card, input, button, tip, etc.
+  // Styles
   const mainContainerStyle = {
     display: "flex",
     flexDirection: "column" as const,
@@ -196,7 +276,7 @@ export default function Page() {
     zIndex: 1000,
   };
 
-  // Determine feedback color: green if correct, red if incorrect
+  // Determine feedback color (for animation): green if correct, red if incorrect
   const feedbackColor =
     feedback.startsWith("正確") ? "#008000" : feedback.startsWith("錯誤") ? "#FF0000" : "#000";
 
@@ -242,9 +322,14 @@ export default function Page() {
 
       {phase === "practice" && sessionQuestions[currentIndex] && (
         <div style={containerStyle}>
-          <button style={buttonStyle} onClick={backToMenu}>
-            返回選單
-          </button>
+          <div>
+            <button style={buttonStyle} onClick={backToMenu}>
+              返回選單
+            </button>
+            <button style={buttonStyle} onClick={earlyExit}>
+              提前結束
+            </button>
+          </div>
           <h1>
             {mode} 學習 - 題目 {currentIndex + 1} / {sessionQuestions.length}
           </h1>
@@ -357,15 +442,99 @@ export default function Page() {
                     <strong>正確答案：</strong> {item.question.romaji}
                   </p>
                   <p>
-                    <strong>你的答案：</strong> {item.userAnswer}
+                    <strong>你的答案：</strong> {highlightDiff(item.userAnswer, item.question.romaji)}
                   </p>
                 </div>
               ))}
             </div>
           )}
+          {incorrectList.length > 0 && (
+            <button style={buttonStyle} onClick={repracticeIncorrect}>
+              重新練習答錯的單字
+            </button>
+          )}
           <button style={buttonStyle} onClick={backToMenu}>
             返回選單
           </button>
+        </div>
+      )}
+
+      {phase === "repractice" && sessionQuestions[currentIndex] && (
+        <div style={containerStyle}>
+          <div>
+            <button style={buttonStyle} onClick={backToMenu}>
+              返回選單
+            </button>
+          </div>
+          <h1>
+            重新練習 - 題目 {currentIndex + 1} / {sessionQuestions.length}
+          </h1>
+          <div style={wordStyle}>
+            {sessionQuestions[currentIndex].kanji ? (
+              <>
+                <p style={{ fontSize: "1.8em", fontWeight: "bold" }}>
+                  {sessionQuestions[currentIndex].kana}
+                </p>
+                <p style={{ fontSize: "1.5em" }}>
+                  {sessionQuestions[currentIndex].kanji}
+                </p>
+              </>
+            ) : (
+              <>
+                <p style={{ fontSize: "1.8em", fontWeight: "bold" }}></p>
+                <p style={{ fontSize: "1.5em" }}>
+                  {sessionQuestions[currentIndex].kana}
+                </p>
+              </>
+            )}
+            <p style={{ fontSize: "1.2em", marginTop: "10px" }}>
+              {sessionQuestions[currentIndex].meaning}
+            </p>
+          </div>
+          <div>
+            <input
+              type="text"
+              ref={inputRef}
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="請輸入羅馬拼音"
+              style={inputStyle}
+            />
+            <button style={buttonStyle} onClick={checkAnswer} disabled={confirmDisabled}>
+              檢查答案
+            </button>
+          </div>
+          {showAnswer && (
+            <div
+              className="feedback-animation"
+              style={{
+                fontSize: "1.5em",
+                margin: "20px 0",
+                color: feedbackColor,
+                whiteSpace: "pre-line",
+              }}
+            >
+              {feedback}
+              <br />
+              {sessionQuestions[currentIndex].kanji ? (
+                <>
+                  {sessionQuestions[currentIndex].kana}
+                  <br />
+                  {sessionQuestions[currentIndex].kanji} ({sessionQuestions[currentIndex].romaji})
+                </>
+              ) : (
+                <>
+                  {sessionQuestions[currentIndex].kana} ({sessionQuestions[currentIndex].romaji})
+                </>
+              )}
+            </div>
+          )}
+          {showAnswer && (
+            <button style={buttonStyle} onClick={nextQuestion}>
+              下一題
+            </button>
+          )}
         </div>
       )}
       <style jsx global>{`
