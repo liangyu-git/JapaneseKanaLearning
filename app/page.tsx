@@ -305,11 +305,19 @@ export default function Page() {
   const feedbackColor =
     feedback.startsWith("正確") ? "#008000" : feedback.startsWith("錯誤") ? "#FF0000" : "#000";
 
-  // Updated style for feedback card with a pretty frame that only shows the word details.
+  // Style for feedback message (correctness)
+  const feedbackMsgStyle = {
+    fontSize: "1.5em",
+    marginBottom: "10px",
+    color: feedbackColor,
+    fontWeight: "bold",
+  };
+
+  // Updated style for feedback card with a pretty frame that only shows word details.
   const feedbackCardStyle = {
     fontSize: "1.5em",
     margin: "20px 0",
-    color: feedbackColor,
+    color: "#000",
     whiteSpace: "pre-line" as const,
     border: "2px solid #0070f3",
     borderRadius: "8px",
@@ -425,19 +433,22 @@ export default function Page() {
             </button>
           </div>
           {showAnswer && (
-            <div className="feedback-animation" style={feedbackCardStyle}>
-              {sessionQuestions[currentIndex].kanji ? (
-                <>
-                  {sessionQuestions[currentIndex].kana}
-                  <br />
-                  {sessionQuestions[currentIndex].kanji} ({sessionQuestions[currentIndex].romaji})
-                </>
-              ) : (
-                <>
-                  {sessionQuestions[currentIndex].kana} ({sessionQuestions[currentIndex].romaji})
-                </>
-              )}
-            </div>
+            <>
+              <div style={feedbackMsgStyle}>{feedback}</div>
+              <div className="feedback-animation" style={feedbackCardStyle}>
+                {sessionQuestions[currentIndex].kanji ? (
+                  <>
+                    {sessionQuestions[currentIndex].kana}
+                    <br />
+                    {sessionQuestions[currentIndex].kanji} ({sessionQuestions[currentIndex].romaji})
+                  </>
+                ) : (
+                  <>
+                    {sessionQuestions[currentIndex].kana} ({sessionQuestions[currentIndex].romaji})
+                  </>
+                )}
+              </div>
+            </>
           )}
           {showAnswer && (
             <button style={buttonStyle} onClick={nextQuestion}>
@@ -551,19 +562,22 @@ export default function Page() {
             </button>
           </div>
           {showAnswer && (
-            <div className="feedback-animation" style={feedbackCardStyle}>
-              {sessionQuestions[currentIndex].kanji ? (
-                <>
-                  {sessionQuestions[currentIndex].kana}
-                  <br />
-                  {sessionQuestions[currentIndex].kanji} ({sessionQuestions[currentIndex].romaji})
-                </>
-              ) : (
-                <>
-                  {sessionQuestions[currentIndex].kana} ({sessionQuestions[currentIndex].romaji})
-                </>
-              )}
-            </div>
+            <>
+              <div style={feedbackMsgStyle}>{feedback}</div>
+              <div className="feedback-animation" style={feedbackCardStyle}>
+                {sessionQuestions[currentIndex].kanji ? (
+                  <>
+                    {sessionQuestions[currentIndex].kana}
+                    <br />
+                    {sessionQuestions[currentIndex].kanji} ({sessionQuestions[currentIndex].romaji})
+                  </>
+                ) : (
+                  <>
+                    {sessionQuestions[currentIndex].kana} ({sessionQuestions[currentIndex].romaji})
+                  </>
+                )}
+              </div>
+            </>
           )}
           {showAnswer && (
             <button style={buttonStyle} onClick={nextQuestion}>
