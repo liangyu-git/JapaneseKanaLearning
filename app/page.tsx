@@ -39,7 +39,7 @@ export default function Page() {
       .catch((err) => console.error("Error loading data.json:", err));
   }, []);
 
-  // Start mode: filter data and move to the setup phase
+  // Mode selection: filter data and move to setup phase
   const startMode = (selectedMode: string) => {
     setMode(selectedMode);
     let filtered: Word[] = [];
@@ -62,21 +62,20 @@ export default function Page() {
       return;
     }
     const total = Math.min(count, filteredData.length);
-    // Shuffle and take the first "total" questions
     const shuffled = [...filteredData].sort(() => Math.random() - 0.5);
     const session = shuffled.slice(0, total);
     setSessionQuestions(session);
     setCurrentIndex(0);
     setIncorrectList([]);
     setPhase("practice");
-    // Reset answer state
     setShowAnswer(false);
     setConfirmDisabled(false);
     setUserInput("");
+    setFeedback("");
     setTimeout(() => inputRef.current?.focus(), 0);
   };
 
-  // Move to the next question (or review if finished)
+  // Move to the next question (or review phase if finished)
   const nextQuestion = () => {
     if (currentIndex + 1 >= sessionQuestions.length) {
       setPhase("review");
@@ -90,7 +89,7 @@ export default function Page() {
     }
   };
 
-  // Check the answer and disable the button
+  // Check answer, disable confirm button and show feedback with animation
   const checkAnswer = () => {
     if (!sessionQuestions[currentIndex]) return;
     const current = sessionQuestions[currentIndex];
@@ -123,7 +122,7 @@ export default function Page() {
     setConfirmDisabled(false);
   };
 
-  // Handle keyboard events on the input field
+  // Handle keyboard events: Enter or Space to confirm or move to next question
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -135,25 +134,26 @@ export default function Page() {
     }
   };
 
-  // Styles
+  // Styles for main container, card, input, button, tip, etc.
   const mainContainerStyle = {
     display: "flex",
     flexDirection: "column" as const,
     justifyContent: "center",
     alignItems: "center",
     minHeight: "100vh",
-    background: "#f5f5f5",
+    background: "linear-gradient(135deg, #f0f4ff, #d9e8ff)",
     color: "#000",
     padding: "10px",
+    position: "relative" as const,
   };
 
   const containerStyle = {
     maxWidth: "600px",
     width: "100%",
     background: "#fff",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+    padding: "30px",
+    borderRadius: "12px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
     textAlign: "center" as const,
     margin: "10px",
   };
@@ -163,10 +163,12 @@ export default function Page() {
   };
 
   const inputStyle = {
-    padding: "8px",
+    padding: "10px",
     fontSize: "1em",
     width: "60%",
     marginRight: "10px",
+    borderRadius: "4px",
+    border: "1px solid #ccc",
   };
 
   const buttonStyle = {
@@ -174,10 +176,35 @@ export default function Page() {
     fontSize: "1em",
     margin: "10px",
     cursor: "pointer",
+    borderRadius: "4px",
+    border: "none",
+    backgroundColor: "#0070f3",
+    color: "#fff",
+    transition: "background-color 0.3s ease",
   };
+
+  const tipStyle = {
+    position: "fixed" as const,
+    top: "10px",
+    right: "10px",
+    background: "#fff",
+    padding: "8px 12px",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+    fontSize: "0.9em",
+    zIndex: 1000,
+  };
+
+  // Determine feedback color: green if correct, red if incorrect
+  const feedbackColor =
+    feedback.startsWith("正確") ? "#008000" : feedback.startsWith("錯誤") ? "#FF0000" : "#000";
 
   return (
     <div style={mainContainerStyle}>
+      <div style={tipStyle}>
+        提示：可多練習熟悉羅馬拼音，按 Enter 確認答案及進入下一題
+      </div>
       {phase === "modeSelection" && (
         <div style={containerStyle}>
           <h1>選擇學習模式</h1>
@@ -259,10 +286,11 @@ export default function Page() {
           </div>
           {showAnswer && (
             <div
+              className="feedback-animation"
               style={{
                 fontSize: "1.5em",
                 margin: "20px 0",
-                color: "#000",
+                color: feedbackColor,
                 whiteSpace: "pre-line",
               }}
             >
@@ -340,6 +368,21 @@ export default function Page() {
           </button>
         </div>
       )}
+      <style jsx global>{`
+        @keyframes fadeInScale {
+          0% {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .feedback-animation {
+          animation: fadeInScale 0.5s ease-in-out;
+        }
+      `}</style>
     </div>
   );
 }
