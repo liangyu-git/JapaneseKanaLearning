@@ -1,17 +1,3537 @@
 [
-    {
-      "type": "平假名",
-      "kanji": "雲",
-      "kana": "くも",
-      "romaji": "kumo",
-      "meaning": "雲"
-    },
-    {
-      "type": "片假名",
-      "kanji": "",
-      "kana": "コップ",
-      "romaji": "koppu",
-      "meaning": "杯子"
-    }
+  {
+    "type": "平假名",
+    "kanji": "川",
+    "kana": "かわ",
+    "romaji": "kawa",
+    "meaning": "河川"
+  },
+  {
+    "type": "平假名",
+    "kanji": "花",
+    "kana": "はな",
+    "romaji": "hana",
+    "meaning": "花"
+  },
+  {
+    "type": "平假名",
+    "kanji": "猫",
+    "kana": "ねこ",
+    "romaji": "neko",
+    "meaning": "貓"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鳥",
+    "kana": "とり",
+    "romaji": "tori",
+    "meaning": "鳥"
+  },
+  {
+    "type": "平假名",
+    "kanji": "山",
+    "kana": "やま",
+    "romaji": "yama",
+    "meaning": "山"
+  },
+  {
+    "type": "平假名",
+    "kanji": "雨",
+    "kana": "あめ",
+    "romaji": "ame",
+    "meaning": "雨"
+  },
+  {
+    "type": "平假名",
+    "kanji": "魚",
+    "kana": "さかな",
+    "romaji": "sakana",
+    "meaning": "魚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "犬",
+    "kana": "いぬ",
+    "romaji": "inu",
+    "meaning": "狗"
+  },
+  {
+    "type": "平假名",
+    "kanji": "手",
+    "kana": "て",
+    "romaji": "te",
+    "meaning": "手"
+  },
+  {
+    "type": "平假名",
+    "kanji": "足",
+    "kana": "あし",
+    "romaji": "ashi",
+    "meaning": "腳"
+  },
+  {
+    "type": "平假名",
+    "kanji": "耳",
+    "kana": "みみ",
+    "romaji": "mimi",
+    "meaning": "耳朵"
+  },
+  {
+    "type": "平假名",
+    "kanji": "目",
+    "kana": "め",
+    "romaji": "me",
+    "meaning": "眼睛"
+  },
+  {
+    "type": "平假名",
+    "kanji": "口",
+    "kana": "くち",
+    "romaji": "kuchi",
+    "meaning": "嘴巴"
+  },
+  {
+    "type": "平假名",
+    "kanji": "風",
+    "kana": "かぜ",
+    "romaji": "kaze",
+    "meaning": "風"
+  },
+  {
+    "type": "平假名",
+    "kanji": "火",
+    "kana": "ひ",
+    "romaji": "hi",
+    "meaning": "火"
+  },
+  {
+    "type": "平假名",
+    "kanji": "水",
+    "kana": "みず",
+    "romaji": "mizu",
+    "meaning": "水"
+  },
+  {
+    "type": "平假名",
+    "kanji": "土",
+    "kana": "つち",
+    "romaji": "tsuchi",
+    "meaning": "土"
+  },
+  {
+    "type": "平假名",
+    "kanji": "木",
+    "kana": "き",
+    "romaji": "ki",
+    "meaning": "樹木"
+  },
+  {
+    "type": "平假名",
+    "kanji": "空",
+    "kana": "そら",
+    "romaji": "sora",
+    "meaning": "天空"
+  },
+  {
+    "type": "平假名",
+    "kanji": "星",
+    "kana": "ほし",
+    "romaji": "hoshi",
+    "meaning": "星星"
+  },
+  {
+    "type": "平假名",
+    "kanji": "日",
+    "kana": "ひ",
+    "romaji": "hi",
+    "meaning": "太陽"
+  },
+  {
+    "type": "平假名",
+    "kanji": "月",
+    "kana": "つき",
+    "romaji": "tsuki",
+    "meaning": "月亮"
+  },
+  {
+    "type": "平假名",
+    "kanji": "光",
+    "kana": "ひかり",
+    "romaji": "hikari",
+    "meaning": "光"
+  },
+  {
+    "type": "平假名",
+    "kanji": "雪",
+    "kana": "ゆき",
+    "romaji": "yuki",
+    "meaning": "雪"
+  },
+  {
+    "type": "平假名",
+    "kanji": "花火",
+    "kana": "はなび",
+    "romaji": "hanabi",
+    "meaning": "煙火"
+  },
+  {
+    "type": "平假名",
+    "kanji": "草",
+    "kana": "くさ",
+    "romaji": "kusa",
+    "meaning": "草"
+  },
+  {
+    "type": "平假名",
+    "kanji": "竹",
+    "kana": "たけ",
+    "romaji": "take",
+    "meaning": "竹子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "石",
+    "kana": "いし",
+    "romaji": "ishi",
+    "meaning": "石頭"
+  },
+  {
+    "type": "平假名",
+    "kanji": "海",
+    "kana": "うみ",
+    "romaji": "umi",
+    "meaning": "海"
+  },
+  {
+    "type": "平假名",
+    "kanji": "波",
+    "kana": "なみ",
+    "romaji": "nami",
+    "meaning": "波浪"
+  },
+  {
+    "type": "平假名",
+    "kanji": "虫",
+    "kana": "むし",
+    "romaji": "mushi",
+    "meaning": "昆蟲"
+  },
+  {
+    "type": "平假名",
+    "kanji": "葉",
+    "kana": "は",
+    "romaji": "ha",
+    "meaning": "葉子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "船",
+    "kana": "ふね",
+    "romaji": "fune",
+    "meaning": "船"
+  },
+  {
+    "type": "平假名",
+    "kanji": "島",
+    "kana": "しま",
+    "romaji": "shima",
+    "meaning": "島"
+  },
+  {
+    "type": "平假名",
+    "kanji": "森",
+    "kana": "もり",
+    "romaji": "mori",
+    "meaning": "森林"
+  },
+  {
+    "type": "平假名",
+    "kanji": "野原",
+    "kana": "のはら",
+    "romaji": "nohara",
+    "meaning": "草原"
+  },
+  {
+    "type": "平假名",
+    "kanji": "湖",
+    "kana": "みずうみ",
+    "romaji": "mizuumi",
+    "meaning": "湖"
+  },
+  {
+    "type": "平假名",
+    "kanji": "空気",
+    "kana": "くうき",
+    "romaji": "kuuki",
+    "meaning": "空氣"
+  },
+  {
+    "type": "平假名",
+    "kanji": "地球",
+    "kana": "ちきゅう",
+    "romaji": "chikyuu",
+    "meaning": "地球"
+  },
+  {
+    "type": "平假名",
+    "kanji": "宇宙",
+    "kana": "うちゅう",
+    "romaji": "uchuu",
+    "meaning": "宇宙"
+  },
+  {
+    "type": "平假名",
+    "kanji": "朝",
+    "kana": "あさ",
+    "romaji": "asa",
+    "meaning": "早晨"
+  },
+  {
+    "type": "平假名",
+    "kanji": "昼",
+    "kana": "ひる",
+    "romaji": "hiru",
+    "meaning": "中午"
+  },
+  {
+    "type": "平假名",
+    "kanji": "夕方",
+    "kana": "ゆうがた",
+    "romaji": "yuugata",
+    "meaning": "傍晚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "夜",
+    "kana": "よる",
+    "romaji": "yoru",
+    "meaning": "夜晚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "星空",
+    "kana": "ほしぞら",
+    "romaji": "hoshizora",
+    "meaning": "星空"
+  },
+  {
+    "type": "平假名",
+    "kanji": "影",
+    "kana": "かげ",
+    "romaji": "kage",
+    "meaning": "影子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "音",
+    "kana": "おと",
+    "romaji": "oto",
+    "meaning": "聲音"
+  },
+  {
+    "type": "平假名",
+    "kanji": "歌",
+    "kana": "うた",
+    "romaji": "uta",
+    "meaning": "歌曲"
+  },
+  {
+    "type": "平假名",
+    "kanji": "声",
+    "kana": "こえ",
+    "romaji": "koe",
+    "meaning": "聲音（人聲）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "道",
+    "kana": "みち",
+    "romaji": "michi",
+    "meaning": "道路"
+  },
+  {
+    "type": "平假名",
+    "kanji": "橋",
+    "kana": "はし",
+    "romaji": "hashi",
+    "meaning": "橋"
+  },
+  {
+    "type": "平假名",
+    "kanji": "空港",
+    "kana": "くうこう",
+    "romaji": "kuukou",
+    "meaning": "機場"
+  },
+  {
+    "type": "平假名",
+    "kanji": "電車",
+    "kana": "でんしゃ",
+    "romaji": "densha",
+    "meaning": "電車"
+  },
+  {
+    "type": "平假名",
+    "kanji": "汽車",
+    "kana": "くるま",
+    "romaji": "kuruma",
+    "meaning": "汽車"
+  },
+  {
+    "type": "平假名",
+    "kanji": "自転車",
+    "kana": "じてんしゃ",
+    "romaji": "jitensha",
+    "meaning": "腳踏車"
+  },
+  {
+    "type": "平假名",
+    "kanji": "時計",
+    "kana": "とけい",
+    "romaji": "tokei",
+    "meaning": "時鐘"
+  },
+  {
+    "type": "平假名",
+    "kanji": "地図",
+    "kana": "ちず",
+    "romaji": "chizu",
+    "meaning": "地圖"
+  },
+  {
+    "type": "平假名",
+    "kanji": "窓",
+    "kana": "まど",
+    "romaji": "mado",
+    "meaning": "窗戶"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鍵",
+    "kana": "かぎ",
+    "romaji": "kagi",
+    "meaning": "鑰匙"
+  },
+  {
+    "type": "平假名",
+    "kanji": "本",
+    "kana": "ほん",
+    "romaji": "hon",
+    "meaning": "書"
+  },
+  {
+    "type": "平假名",
+    "kanji": "机",
+    "kana": "つくえ",
+    "romaji": "tsukue",
+    "meaning": "桌子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "椅子",
+    "kana": "いす",
+    "romaji": "isu",
+    "meaning": "椅子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "学校",
+    "kana": "がっこう",
+    "romaji": "gakkou",
+    "meaning": "學校"
+  },
+  {
+    "type": "平假名",
+    "kanji": "教室",
+    "kana": "きょうしつ",
+    "romaji": "kyoushitsu",
+    "meaning": "教室"
+  },
+  {
+    "type": "平假名",
+    "kanji": "先生",
+    "kana": "せんせい",
+    "romaji": "sensei",
+    "meaning": "老師"
+  },
+  {
+    "type": "平假名",
+    "kanji": "生徒",
+    "kana": "せいと",
+    "romaji": "seito",
+    "meaning": "學生"
+  },
+  {
+    "type": "平假名",
+    "kanji": "図書館",
+    "kana": "としょかん",
+    "romaji": "toshokan",
+    "meaning": "圖書館"
+  },
+  {
+    "type": "平假名",
+    "kanji": "本棚",
+    "kana": "ほんだな",
+    "romaji": "hondana",
+    "meaning": "書架"
+  },
+  {
+    "type": "平假名",
+    "kanji": "黒板",
+    "kana": "こくばん",
+    "romaji": "kokuban",
+    "meaning": "黑板"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鉛筆",
+    "kana": "えんぴつ",
+    "romaji": "enpitsu",
+    "meaning": "鉛筆"
+  },
+  {
+    "type": "平假名",
+    "kanji": "消しゴム",
+    "kana": "けしごむ",
+    "romaji": "keshigomu",
+    "meaning": "橡皮擦"
+  },
+  {
+    "type": "平假名",
+    "kanji": "宿題",
+    "kana": "しゅくだい",
+    "romaji": "shukudai",
+    "meaning": "作業"
+  },
+  {
+    "type": "平假名",
+    "kanji": "試験",
+    "kana": "しけん",
+    "romaji": "shiken",
+    "meaning": "考試"
+  },
+  {
+    "type": "平假名",
+    "kanji": "授業",
+    "kana": "じゅぎょう",
+    "romaji": "jugyou",
+    "meaning": "課程"
+  },
+  {
+    "type": "平假名",
+    "kanji": "扉",
+    "kana": "とびら",
+    "romaji": "tobira",
+    "meaning": "門"
+  },
+  {
+    "type": "平假名",
+    "kanji": "床",
+    "kana": "ゆか",
+    "romaji": "yuka",
+    "meaning": "地板"
+  },
+  {
+    "type": "平假名",
+    "kanji": "壁",
+    "kana": "かべ",
+    "romaji": "kabe",
+    "meaning": "牆壁"
+  },
+  {
+    "type": "平假名",
+    "kanji": "朝ご飯",
+    "kana": "あさごはん",
+    "romaji": "asagohan",
+    "meaning": "早餐"
+  },
+  {
+    "type": "平假名",
+    "kanji": "昼ご飯",
+    "kana": "ひるごはん",
+    "romaji": "hirugohan",
+    "meaning": "午餐"
+  },
+  {
+    "type": "平假名",
+    "kanji": "晩ご飯",
+    "kana": "ばんごはん",
+    "romaji": "bangohan",
+    "meaning": "晚餐"
+  },
+  {
+    "type": "平假名",
+    "kanji": "米",
+    "kana": "こめ",
+    "romaji": "kome",
+    "meaning": "米"
+  },
+  {
+    "type": "平假名",
+    "kanji": "おにぎり",
+    "kana": "おにぎり",
+    "romaji": "onigiri",
+    "meaning": "飯糰"
+  },
+  {
+    "type": "平假名",
+    "kanji": "味噌汁",
+    "kana": "みそしる",
+    "romaji": "misoshiru",
+    "meaning": "味噌湯"
+  },
+  {
+    "type": "平假名",
+    "kanji": "豆腐",
+    "kana": "とうふ",
+    "romaji": "toufu",
+    "meaning": "豆腐"
+  },
+  {
+    "type": "平假名",
+    "kanji": "納豆",
+    "kana": "なっとう",
+    "romaji": "nattou",
+    "meaning": "納豆"
+  },
+  {
+    "type": "平假名",
+    "kanji": "梅干し",
+    "kana": "うめぼし",
+    "romaji": "umeboshi",
+    "meaning": "梅乾"
+  },
+  {
+    "type": "平假名",
+    "kanji": "卵焼き",
+    "kana": "たまごやき",
+    "romaji": "tamagoyaki",
+    "meaning": "玉子燒"
+  },
+  {
+    "type": "平假名",
+    "kanji": "焼き魚",
+    "kana": "やきざかな",
+    "romaji": "yakizakana",
+    "meaning": "烤魚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "漬物",
+    "kana": "つけもの",
+    "romaji": "tsukemono",
+    "meaning": "醃漬物"
+  },
+  {
+    "type": "平假名",
+    "kanji": "団子",
+    "kana": "だんご",
+    "romaji": "dango",
+    "meaning": "糰子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "餅",
+    "kana": "もち",
+    "romaji": "mochi",
+    "meaning": "麻糬"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蕎麦",
+    "kana": "そば",
+    "romaji": "soba",
+    "meaning": "蕎麥麵"
+  },
+  {
+    "type": "平假名",
+    "kanji": "饅頭",
+    "kana": "まんじゅう",
+    "romaji": "manjuu",
+    "meaning": "饅頭"
+  },
+  {
+    "type": "平假名",
+    "kanji": "栗",
+    "kana": "くり",
+    "romaji": "kuri",
+    "meaning": "栗子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "葡萄",
+    "kana": "ぶどう",
+    "romaji": "budou",
+    "meaning": "葡萄"
+  },
+  {
+    "type": "平假名",
+    "kanji": "苺",
+    "kana": "いちご",
+    "romaji": "ichigo",
+    "meaning": "草莓"
+  },
+  {
+    "type": "平假名",
+    "kanji": "林檎",
+    "kana": "りんご",
+    "romaji": "ringo",
+    "meaning": "蘋果"
+  },
+  {
+    "type": "平假名",
+    "kanji": "野原",
+    "kana": "のはら",
+    "romaji": "nohara",
+    "meaning": "原野"
+  },
+  {
+    "type": "平假名",
+    "kanji": "田んぼ",
+    "kana": "たんぼ",
+    "romaji": "tanbo",
+    "meaning": "稻田"
+  },
+  {
+    "type": "平假名",
+    "kanji": "畑",
+    "kana": "はたけ",
+    "romaji": "hatake",
+    "meaning": "田地"
+  },
+  {
+    "type": "平假名",
+    "kanji": "種",
+    "kana": "たね",
+    "romaji": "tane",
+    "meaning": "種子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "根",
+    "kana": "ね",
+    "romaji": "ne",
+    "meaning": "根"
+  },
+  {
+    "type": "平假名",
+    "kanji": "花びら",
+    "kana": "はなびら",
+    "romaji": "hanabira",
+    "meaning": "花瓣"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蛍",
+    "kana": "ほたる",
+    "romaji": "hotaru",
+    "meaning": "螢火蟲"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蜘蛛",
+    "kana": "くも",
+    "romaji": "kumo",
+    "meaning": "蜘蛛"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蟻",
+    "kana": "あり",
+    "romaji": "ari",
+    "meaning": "螞蟻"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蜂",
+    "kana": "はち",
+    "romaji": "hachi",
+    "meaning": "蜜蜂"
+  },
+  {
+    "type": "平假名",
+    "kanji": "貝",
+    "kana": "かい",
+    "romaji": "kai",
+    "meaning": "貝殼"
+  },
+  {
+    "type": "平假名",
+    "kanji": "亀",
+    "kana": "かめ",
+    "romaji": "kame",
+    "meaning": "烏龜"
+  },
+  {
+    "type": "平假名",
+    "kanji": "狐",
+    "kana": "きつね",
+    "romaji": "kitsune",
+    "meaning": "狐狸"
+  },
+  {
+    "type": "平假名",
+    "kanji": "狼",
+    "kana": "おおかみ",
+    "romaji": "ookami",
+    "meaning": "狼"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蛇",
+    "kana": "へび",
+    "romaji": "hebi",
+    "meaning": "蛇"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蛙",
+    "kana": "かえる",
+    "romaji": "kaeru",
+    "meaning": "青蛙"
+  },
+  {
+    "type": "平假名",
+    "kanji": "雀",
+    "kana": "すずめ",
+    "romaji": "suzume",
+    "meaning": "麻雀"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鴨",
+    "kana": "かも",
+    "romaji": "kamo",
+    "meaning": "鴨子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "馬",
+    "kana": "うま",
+    "romaji": "uma",
+    "meaning": "馬"
+  },
+  {
+    "type": "平假名",
+    "kanji": "牛",
+    "kana": "うし",
+    "romaji": "ushi",
+    "meaning": "牛"
+  },
+  {
+    "type": "平假名",
+    "kanji": "豚",
+    "kana": "ぶた",
+    "romaji": "buta",
+    "meaning": "豬"
+  },
+  {
+    "type": "平假名",
+    "kanji": "羊",
+    "kana": "ひつじ",
+    "romaji": "hitsuji",
+    "meaning": "羊"
+  },
+  {
+    "type": "平假名",
+    "kanji": "猿",
+    "kana": "さる",
+    "romaji": "saru",
+    "meaning": "猴子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "象",
+    "kana": "ぞう",
+    "romaji": "zou",
+    "meaning": "大象"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鷹",
+    "kana": "たか",
+    "romaji": "taka",
+    "meaning": "鷹"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鶏",
+    "kana": "にわとり",
+    "romaji": "niwatori",
+    "meaning": "雞"
+  },
+  {
+    "type": "平假名",
+    "kanji": "雛",
+    "kana": "ひよこ",
+    "romaji": "hiyoko",
+    "meaning": "小雞"
+  },
+  {
+    "type": "平假名",
+    "kanji": "狸",
+    "kana": "たぬき",
+    "romaji": "tanuki",
+    "meaning": "狸貓"
+  },
+  {
+    "type": "平假名",
+    "kanji": "熊",
+    "kana": "くま",
+    "romaji": "kuma",
+    "meaning": "熊"
+  },
+  {
+    "type": "平假名",
+    "kanji": "兎",
+    "kana": "うさぎ",
+    "romaji": "usagi",
+    "meaning": "兔子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蟹",
+    "kana": "かに",
+    "romaji": "kani",
+    "meaning": "螃蟹"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鮭",
+    "kana": "さけ",
+    "romaji": "sake",
+    "meaning": "鮭魚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "鯨",
+    "kana": "くじら",
+    "romaji": "kujira",
+    "meaning": "鯨魚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "蛸",
+    "kana": "たこ",
+    "romaji": "tako",
+    "meaning": "章魚"
+  },
+  {
+    "type": "平假名",
+    "kanji": "烏賊",
+    "kana": "いか",
+    "romaji": "ika",
+    "meaning": "烏賊"
+  },
+  {
+    "type": "平假名",
+    "kanji": "雲",
+    "kana": "くも",
+    "romaji": "kumo",
+    "meaning": "雲"
+  },
+  {
+    "type": "平假名",
+    "kanji": "雷",
+    "kana": "かみなり",
+    "romaji": "kaminari",
+    "meaning": "雷"
+  },
+  {
+    "type": "平假名",
+    "kanji": "霧",
+    "kana": "きり",
+    "romaji": "kiri",
+    "meaning": "霧"
+  },
+  {
+    "type": "平假名",
+    "kanji": "滝",
+    "kana": "たき",
+    "romaji": "taki",
+    "meaning": "瀑布"
+  },
+  {
+    "type": "平假名",
+    "kanji": "洞窟",
+    "kana": "どうくつ",
+    "romaji": "doukutsu",
+    "meaning": "洞窟"
+  },
+  {
+    "type": "平假名",
+    "kanji": "岩",
+    "kana": "いわ",
+    "romaji": "iwa",
+    "meaning": "岩石"
+  },
+  {
+    "type": "平假名",
+    "kanji": "木",
+    "kana": "き",
+    "romaji": "ki",
+    "meaning": "樹"
+  },
+  {
+    "type": "平假名",
+    "kanji": "夕焼け",
+    "kana": "ゆうやけ",
+    "romaji": "yuuyake",
+    "meaning": "夕陽"
+  },
+  {
+    "type": "平假名",
+    "kanji": "朝日",
+    "kana": "あさひ",
+    "romaji": "asahi",
+    "meaning": "朝陽"
+  },
+  {
+    "type": "平假名",
+    "kanji": "虹",
+    "kana": "にじ",
+    "romaji": "niji",
+    "meaning": "彩虹"
+  },
+  {
+    "type": "平假名",
+    "kanji": "北風",
+    "kana": "きたかぜ",
+    "romaji": "kitakaze",
+    "meaning": "北風"
+  },
+  {
+    "type": "平假名",
+    "kanji": "南風",
+    "kana": "みなみかぜ",
+    "romaji": "minamikaze",
+    "meaning": "南風"
+  },
+  {
+    "type": "平假名",
+    "kanji": "東風",
+    "kana": "ひがしかぜ",
+    "romaji": "higashikaze",
+    "meaning": "東風"
+  },
+  {
+    "type": "平假名",
+    "kanji": "西風",
+    "kana": "にしかぜ",
+    "romaji": "nishikaze",
+    "meaning": "西風"
+  },
+  {
+    "type": "平假名",
+    "kanji": "浜",
+    "kana": "はま",
+    "romaji": "hama",
+    "meaning": "海濱"
+  },
+  {
+    "type": "平假名",
+    "kanji": "港",
+    "kana": "みなと",
+    "romaji": "minato",
+    "meaning": "港口"
+  },
+  {
+    "type": "平假名",
+    "kanji": "丘",
+    "kana": "おか",
+    "romaji": "oka",
+    "meaning": "丘陵"
+  },
+  {
+    "type": "平假名",
+    "kanji": "崖",
+    "kana": "がけ",
+    "romaji": "gake",
+    "meaning": "懸崖"
+  },
+  {
+    "type": "平假名",
+    "kanji": "谷",
+    "kana": "たに",
+    "romaji": "tani",
+    "meaning": "山谷"
+  },
+  {
+    "type": "平假名",
+    "kanji": "洞穴",
+    "kana": "ほらあな",
+    "romaji": "horaana",
+    "meaning": "洞穴"
+  },
+  {
+    "type": "平假名",
+    "kanji": "泉",
+    "kana": "いずみ",
+    "romaji": "izumi",
+    "meaning": "泉水"
+  },
+  {
+    "type": "平假名",
+    "kanji": "川辺",
+    "kana": "かわべ",
+    "romaji": "kawabe",
+    "meaning": "河畔"
+  },
+  {
+    "type": "平假名",
+    "kanji": "湖畔",
+    "kana": "こはん",
+    "romaji": "kohan",
+    "meaning": "湖畔"
+  },
+  {
+    "type": "平假名",
+    "kanji": "農場",
+    "kana": "のうじょう",
+    "romaji": "noujou",
+    "meaning": "農場"
+  },
+  {
+    "type": "平假名",
+    "kanji": "田園",
+    "kana": "でんえん",
+    "romaji": "denen",
+    "meaning": "田園"
+  },
+  {
+    "type": "平假名",
+    "kanji": "畑",
+    "kana": "はたけ",
+    "romaji": "hatake",
+    "meaning": "農田"
+  },
+  {
+    "type": "平假名",
+    "kanji": "麦",
+    "kana": "むぎ",
+    "romaji": "mugi",
+    "meaning": "小麥"
+  },
+  {
+    "type": "平假名",
+    "kanji": "稲",
+    "kana": "いね",
+    "romaji": "ine",
+    "meaning": "稻子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "苗",
+    "kana": "なえ",
+    "romaji": "nae",
+    "meaning": "秧苗"
+  },
+  {
+    "type": "平假名",
+    "kanji": "果樹",
+    "kana": "かじゅ",
+    "romaji": "kaju",
+    "meaning": "果樹"
+  },
+  {
+    "type": "平假名",
+    "kanji": "柿",
+    "kana": "かき",
+    "romaji": "kaki",
+    "meaning": "柿子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "桃",
+    "kana": "もも",
+    "romaji": "momo",
+    "meaning": "桃子"
+  },
+  {
+    "type": "平假名",
+    "kanji": "西瓜",
+    "kana": "すいか",
+    "romaji": "suika",
+    "meaning": "西瓜"
+  },
+  {
+    "type": "平假名",
+    "kanji": "野菜",
+    "kana": "やさい",
+    "romaji": "yasai",
+    "meaning": "蔬菜"
+  },
+  {
+    "type": "平假名",
+    "kanji": "春",
+    "kana": "はる",
+    "romaji": "haru",
+    "meaning": "春天"
+  },
+  {
+    "type": "平假名",
+    "kanji": "夏",
+    "kana": "なつ",
+    "romaji": "natsu",
+    "meaning": "夏天"
+  },
+  {
+    "type": "平假名",
+    "kanji": "秋",
+    "kana": "あき",
+    "romaji": "aki",
+    "meaning": "秋天"
+  },
+  {
+    "type": "平假名",
+    "kanji": "冬",
+    "kana": "ふゆ",
+    "romaji": "fuyu",
+    "meaning": "冬天"
+  },
+  {
+    "type": "平假名",
+    "kanji": "夜空",
+    "kana": "よぞら",
+    "romaji": "yozora",
+    "meaning": "夜空"
+  },
+  {
+    "type": "平假名",
+    "kanji": "氷",
+    "kana": "こおり",
+    "romaji": "koori",
+    "meaning": "冰"
+  },
+  {
+    "type": "平假名",
+    "kanji": "潮",
+    "kana": "しお",
+    "romaji": "shio",
+    "meaning": "潮汐"
+  },
+  {
+    "type": "平假名",
+    "kanji": "山道",
+    "kana": "やまみち",
+    "romaji": "yamamichi",
+    "meaning": "山路"
+  },
+  {
+    "type": "平假名",
+    "kanji": "草原",
+    "kana": "そうげん",
+    "romaji": "sougen",
+    "meaning": "草原"
+  },
+  {
+    "type": "平假名",
+    "kanji": "田舎",
+    "kana": "いなか",
+    "romaji": "inaka",
+    "meaning": "鄉下"
+  },
+  {
+    "type": "平假名",
+    "kanji": "都市",
+    "kana": "とし",
+    "romaji": "toshi",
+    "meaning": "城市"
+  },
+  {
+    "type": "平假名",
+    "kanji": "町",
+    "kana": "まち",
+    "romaji": "machi",
+    "meaning": "城鎮"
+  },
+  {
+    "type": "平假名",
+    "kanji": "通り",
+    "kana": "とおり",
+    "romaji": "toori",
+    "meaning": "街道"
+  },
+  {
+    "type": "平假名",
+    "kanji": "横丁",
+    "kana": "よこちょう",
+    "romaji": "yokochou",
+    "meaning": "小巷"
+  },
+  {
+    "type": "平假名",
+    "kanji": "坂",
+    "kana": "さか",
+    "romaji": "saka",
+    "meaning": "坡道"
+  },
+  {
+    "type": "平假名",
+    "kanji": "階段",
+    "kana": "かいだん",
+    "romaji": "kaidan",
+    "meaning": "樓梯"
+  },
+  {
+    "type": "平假名",
+    "kanji": "地下",
+    "kana": "ちか",
+    "romaji": "chika",
+    "meaning": "地下"
+  },
+  {
+    "type": "平假名",
+    "kanji": "建物",
+    "kana": "たてもの",
+    "romaji": "tatemono",
+    "meaning": "建築物"
+  },
+  {
+    "type": "平假名",
+    "kanji": "寺",
+    "kana": "てら",
+    "romaji": "tera",
+    "meaning": "寺廟"
+  },
+  {
+    "type": "平假名",
+    "kanji": "神社",
+    "kana": "じんじゃ",
+    "romaji": "jinja",
+    "meaning": "神社"
+  },
+  {
+    "type": "平假名",
+    "kanji": "城",
+    "kana": "しろ",
+    "romaji": "shiro",
+    "meaning": "城堡"
+  },
+  {
+    "type": "平假名",
+    "kanji": "公園",
+    "kana": "こうえん",
+    "romaji": "kouen",
+    "meaning": "公園"
+  },
+  {
+    "type": "平假名",
+    "kanji": "噴水",
+    "kana": "ふんすい",
+    "romaji": "funsui",
+    "meaning": "噴泉"
+  },
+  {
+    "type": "平假名",
+    "kanji": "駅",
+    "kana": "えき",
+    "romaji": "eki",
+    "meaning": "車站"
+  },
+  {
+    "type": "平假名",
+    "kanji": "食べます",
+    "kana": "たべます",
+    "romaji": "tabemasu",
+    "meaning": "吃（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "飲みます",
+    "kana": "のみます",
+    "romaji": "nomimasu",
+    "meaning": "喝（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "見ます",
+    "kana": "みます",
+    "romaji": "mimasu",
+    "meaning": "看（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "聞きます",
+    "kana": "ききます",
+    "romaji": "kikimasu",
+    "meaning": "聽（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "話します",
+    "kana": "はなします",
+    "romaji": "hanashimasu",
+    "meaning": "說話（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "書きます",
+    "kana": "かきます",
+    "romaji": "kakimasu",
+    "meaning": "寫（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "読みます",
+    "kana": "よみます",
+    "romaji": "yomimasu",
+    "meaning": "閱讀（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "歩きます",
+    "kana": "あるきます",
+    "romaji": "arukimasu",
+    "meaning": "走路（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "走ります",
+    "kana": "はしります",
+    "romaji": "hashirimasu",
+    "meaning": "跑步（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "泳ぎます",
+    "kana": "およぎます",
+    "romaji": "oyogimasu",
+    "meaning": "游泳（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "待ちます",
+    "kana": "まちます",
+    "romaji": "machimasu",
+    "meaning": "等待（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "持ちます",
+    "kana": "もちます",
+    "romaji": "mochimasu",
+    "meaning": "拿、持有（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "買います",
+    "kana": "かいます",
+    "romaji": "kaimasu",
+    "meaning": "購買（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "売ります",
+    "kana": "うります",
+    "romaji": "urimasu",
+    "meaning": "販賣（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "作ります",
+    "kana": "つくります",
+    "romaji": "tsukurimasu",
+    "meaning": "製作（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "使います",
+    "kana": "つかいます",
+    "romaji": "tsukaimasu",
+    "meaning": "使用（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "開けます",
+    "kana": "あけます",
+    "romaji": "akemasu",
+    "meaning": "打開（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "閉めます",
+    "kana": "しめます",
+    "romaji": "shimemasu",
+    "meaning": "關閉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "乗ります",
+    "kana": "のります",
+    "romaji": "norimasu",
+    "meaning": "搭乘（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "降ります",
+    "kana": "おります",
+    "romaji": "orimasu",
+    "meaning": "下車（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "働きます",
+    "kana": "はたらきます",
+    "romaji": "hatarakimasu",
+    "meaning": "工作（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "勉強します",
+    "kana": "べんきょうします",
+    "romaji": "benkyou shimasu",
+    "meaning": "學習（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "練習します",
+    "kana": "れんしゅうします",
+    "romaji": "renshuu shimasu",
+    "meaning": "練習（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "旅行します",
+    "kana": "りょこうします",
+    "romaji": "ryokou shimasu",
+    "meaning": "旅行（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "散歩します",
+    "kana": "さんぽします",
+    "romaji": "sanpo shimasu",
+    "meaning": "散步（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "掃除します",
+    "kana": "そうじします",
+    "romaji": "souji shimasu",
+    "meaning": "打掃（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "洗濯します",
+    "kana": "せんたくします",
+    "romaji": "sentaku shimasu",
+    "meaning": "洗衣服（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "料理します",
+    "kana": "りょうりします",
+    "romaji": "ryouri shimasu",
+    "meaning": "料理（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "運動します",
+    "kana": "うんどうします",
+    "romaji": "undou shimasu",
+    "meaning": "運動（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "電話します",
+    "kana": "でんわします",
+    "romaji": "denwa shimasu",
+    "meaning": "打電話（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "結婚します",
+    "kana": "けっこんします",
+    "romaji": "kekkon shimasu",
+    "meaning": "結婚（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "考えます",
+    "kana": "かんがえます",
+    "romaji": "kangaemasu",
+    "meaning": "思考（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "覚えます",
+    "kana": "おぼえます",
+    "romaji": "oboemasu",
+    "meaning": "記住（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "忘れます",
+    "kana": "わすれます",
+    "romaji": "wasuremasu",
+    "meaning": "忘記（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "起きます",
+    "kana": "おきます",
+    "romaji": "okimasu",
+    "meaning": "起床（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "寝ます",
+    "kana": "ねます",
+    "romaji": "nemasu",
+    "meaning": "睡覺（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "休みます",
+    "kana": "やすみます",
+    "romaji": "yasumimasu",
+    "meaning": "休息（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "遊びます",
+    "kana": "あそびます",
+    "romaji": "asobimasu",
+    "meaning": "遊玩（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "帰ります",
+    "kana": "かえります",
+    "romaji": "kaerimasu",
+    "meaning": "回家（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "貸します",
+    "kana": "かします",
+    "romaji": "kashimasu",
+    "meaning": "借出（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "入ります",
+    "kana": "はいります",
+    "romaji": "hairimasu",
+    "meaning": "進入（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "出ます",
+    "kana": "でます",
+    "romaji": "demasu",
+    "meaning": "離開（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "立ちます",
+    "kana": "たちます",
+    "romaji": "tachimasu",
+    "meaning": "站立（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "座ります",
+    "kana": "すわります",
+    "romaji": "suwarimasu",
+    "meaning": "坐下（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "押します",
+    "kana": "おします",
+    "romaji": "oshimasu",
+    "meaning": "按、推（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "引きます",
+    "kana": "ひきます",
+    "romaji": "hikimasu",
+    "meaning": "拉（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "落とします",
+    "kana": "おとします",
+    "romaji": "otoshimasu",
+    "meaning": "弄掉、弄丟（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "拾います",
+    "kana": "ひろいます",
+    "romaji": "hiroimasu",
+    "meaning": "撿起來（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "壊します",
+    "kana": "こわします",
+    "romaji": "kowashimasu",
+    "meaning": "弄壞（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "直します",
+    "kana": "なおします",
+    "romaji": "naoshimasu",
+    "meaning": "修理、改正（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "送ります",
+    "kana": "おくります",
+    "romaji": "okurimasu",
+    "meaning": "寄送、送行（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "受けます",
+    "kana": "うけます",
+    "romaji": "ukemasu",
+    "meaning": "接受、參加（考試等）（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "習います",
+    "kana": "ならいます",
+    "romaji": "naraimasu",
+    "meaning": "學習（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "試します",
+    "kana": "ためします",
+    "romaji": "tameshimasu",
+    "meaning": "嘗試（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "変えます",
+    "kana": "かえます",
+    "romaji": "kaemasu",
+    "meaning": "改變（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "続けます",
+    "kana": "つづけます",
+    "romaji": "tsuzukemasu",
+    "meaning": "繼續（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "決めます",
+    "kana": "きめます",
+    "romaji": "kimemasu",
+    "meaning": "決定（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "届けます",
+    "kana": "とどけます",
+    "romaji": "todokemasu",
+    "meaning": "遞送（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "助けます",
+    "kana": "たすけます",
+    "romaji": "tasukemasu",
+    "meaning": "幫助（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "疲れます",
+    "kana": "つかれます",
+    "romaji": "tsukaremasu",
+    "meaning": "疲累（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "借ります",
+    "kana": "かります",
+    "romaji": "karimasu",
+    "meaning": "借入（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "払います",
+    "kana": "はらいます",
+    "romaji": "haraimasu",
+    "meaning": "支付（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "開きます",
+    "kana": "ひらきます",
+    "romaji": "hirakimasu",
+    "meaning": "打開（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "閉じます",
+    "kana": "とじます",
+    "romaji": "tojimasu",
+    "meaning": "關閉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "消します",
+    "kana": "けします",
+    "romaji": "keshimasu",
+    "meaning": "關掉（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "点けます",
+    "kana": "つけます",
+    "romaji": "tsukemasu",
+    "meaning": "打開（電器）（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "並びます",
+    "kana": "ならびます",
+    "romaji": "narabimasu",
+    "meaning": "排隊（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "落ちます",
+    "kana": "おちます",
+    "romaji": "ochimasu",
+    "meaning": "掉落（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "壊れます",
+    "kana": "こわれます",
+    "romaji": "kowaremasu",
+    "meaning": "壞掉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "修理します",
+    "kana": "しゅうりします",
+    "romaji": "shuuri shimasu",
+    "meaning": "修理（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "迎えます",
+    "kana": "むかえます",
+    "romaji": "mukaemasu",
+    "meaning": "迎接（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "送ります",
+    "kana": "おくります",
+    "romaji": "okurimasu",
+    "meaning": "送行、寄送（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "招待します",
+    "kana": "しょうたいします",
+    "romaji": "shoutai shimasu",
+    "meaning": "邀請（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "予約します",
+    "kana": "よやくします",
+    "romaji": "yoyaku shimasu",
+    "meaning": "預約（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "説明します",
+    "kana": "せつめいします",
+    "romaji": "setsumei shimasu",
+    "meaning": "說明（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "注意します",
+    "kana": "ちゅういします",
+    "romaji": "chuui shimasu",
+    "meaning": "注意（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "連絡します",
+    "kana": "れんらくします",
+    "romaji": "renraku shimasu",
+    "meaning": "聯絡（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "歌います",
+    "kana": "うたいます",
+    "romaji": "utaimasu",
+    "meaning": "唱歌（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "踊ります",
+    "kana": "おどります",
+    "romaji": "odorimasu",
+    "meaning": "跳舞（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "弾きます",
+    "kana": "ひきます",
+    "romaji": "hikimasu",
+    "meaning": "彈（樂器）（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "描きます",
+    "kana": "かきます",
+    "romaji": "kakimasu",
+    "meaning": "畫畫（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "撮ります",
+    "kana": "とります",
+    "romaji": "torimasu",
+    "meaning": "拍攝（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "遊びます",
+    "kana": "あそびます",
+    "romaji": "asobimasu",
+    "meaning": "玩耍（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "競争します",
+    "kana": "きょうそうします",
+    "romaji": "kyousou shimasu",
+    "meaning": "競爭（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "勝ちます",
+    "kana": "かちます",
+    "romaji": "kachimasu",
+    "meaning": "贏（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "負けます",
+    "kana": "まけます",
+    "romaji": "makemasu",
+    "meaning": "輸（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "参加します",
+    "kana": "さんかします",
+    "romaji": "sanka shimasu",
+    "meaning": "參加（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "決まります",
+    "kana": "きまります",
+    "romaji": "kimarimasu",
+    "meaning": "決定（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "選びます",
+    "kana": "えらびます",
+    "romaji": "erabimasu",
+    "meaning": "選擇（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "準備します",
+    "kana": "じゅんびします",
+    "romaji": "junbi shimasu",
+    "meaning": "準備（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "並べます",
+    "kana": "ならべます",
+    "romaji": "narabemasu",
+    "meaning": "排列（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "片付けます",
+    "kana": "かたづけます",
+    "romaji": "katazukemasu",
+    "meaning": "整理（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "約束します",
+    "kana": "やくそくします",
+    "romaji": "yakusoku shimasu",
+    "meaning": "約定、承諾（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "思い出します",
+    "kana": "おもいだします",
+    "romaji": "omoidasimasu",
+    "meaning": "想起來（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "信じます",
+    "kana": "しんじます",
+    "romaji": "shinjimasu",
+    "meaning": "相信（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "謝ります",
+    "kana": "あやまります",
+    "romaji": "ayamarimasu",
+    "meaning": "道歉（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "受け取ります",
+    "kana": "うけとります",
+    "romaji": "uketorimasu",
+    "meaning": "接收、領取（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "届けます",
+    "kana": "とどけます",
+    "romaji": "todokemasu",
+    "meaning": "送達、遞送（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "返します",
+    "kana": "かえします",
+    "romaji": "kaeshimasu",
+    "meaning": "歸還（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "申し込みます",
+    "kana": "もうしこみます",
+    "romaji": "moushikomimasu",
+    "meaning": "申請（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "頼みます",
+    "kana": "たのみます",
+    "romaji": "tanomimasu",
+    "meaning": "請求、拜託（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "誘います",
+    "kana": "さそいます",
+    "romaji": "sasoimasu",
+    "meaning": "邀請（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "許します",
+    "kana": "ゆるします",
+    "romaji": "yurushimasu",
+    "meaning": "允許（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "認めます",
+    "kana": "みとめます",
+    "romaji": "mitomemasu",
+    "meaning": "承認（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "辞めます",
+    "kana": "やめます",
+    "romaji": "yamemasu",
+    "meaning": "辭職、戒掉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "比べます",
+    "kana": "くらべます",
+    "romaji": "kurabemasu",
+    "meaning": "比較（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "発表します",
+    "kana": "はっぴょうします",
+    "romaji": "happyou shimasu",
+    "meaning": "發表（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "成功します",
+    "kana": "せいこうします",
+    "romaji": "seikou shimasu",
+    "meaning": "成功（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "失敗します",
+    "kana": "しっぱいします",
+    "romaji": "shippai shimasu",
+    "meaning": "失敗（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "緊張します",
+    "kana": "きんちょうします",
+    "romaji": "kinchou shimasu",
+    "meaning": "緊張（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "安心します",
+    "kana": "あんしんします",
+    "romaji": "anshin shimasu",
+    "meaning": "放心、安心（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "驚きます",
+    "kana": "おどろきます",
+    "romaji": "odorokimasu",
+    "meaning": "驚訝（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "喜びます",
+    "kana": "よろこびます",
+    "romaji": "yorokobimasu",
+    "meaning": "高興（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "悲しみます",
+    "kana": "かなしみます",
+    "romaji": "kanashimimasu",
+    "meaning": "悲傷（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "怒ります",
+    "kana": "おこります",
+    "romaji": "okorimasu",
+    "meaning": "生氣（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "急ぎます",
+    "kana": "いそぎます",
+    "romaji": "isogimasu",
+    "meaning": "趕快、急忙（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "逃げます",
+    "kana": "にげます",
+    "romaji": "nigemasu",
+    "meaning": "逃跑（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "隠れます",
+    "kana": "かくれます",
+    "romaji": "kakuremasu",
+    "meaning": "躲藏（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "助けます",
+    "kana": "たすけます",
+    "romaji": "tasukemasu",
+    "meaning": "幫助、救援（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "守ります",
+    "kana": "まもります",
+    "romaji": "mamorimasu",
+    "meaning": "保護、遵守（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "壊します",
+    "kana": "こわします",
+    "romaji": "kowashimasu",
+    "meaning": "破壞（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "拾います",
+    "kana": "ひろいます",
+    "romaji": "hiroimasu",
+    "meaning": "撿起（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "訪ねます",
+    "kana": "たずねます",
+    "romaji": "tazunemasu",
+    "meaning": "拜訪（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "尋ねます",
+    "kana": "たずねます",
+    "romaji": "tazunemasu",
+    "meaning": "詢問（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "頑張ります",
+    "kana": "がんばります",
+    "romaji": "ganbarimasu",
+    "meaning": "努力（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "諦めます",
+    "kana": "あきらめます",
+    "romaji": "akiramemasu",
+    "meaning": "放棄（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "祝います",
+    "kana": "いわいます",
+    "romaji": "iwaimasu",
+    "meaning": "慶祝（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "笑います",
+    "kana": "わらいます",
+    "romaji": "waraimasu",
+    "meaning": "笑（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "泣きます",
+    "kana": "なきます",
+    "romaji": "nakimasu",
+    "meaning": "哭泣（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "疲れます",
+    "kana": "つかれます",
+    "romaji": "tsukaremasu",
+    "meaning": "疲倦（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "破れます",
+    "kana": "やぶれます",
+    "romaji": "yaburemasu",
+    "meaning": "破掉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "折れます",
+    "kana": "おれます",
+    "romaji": "oremasu",
+    "meaning": "折斷（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "曲がります",
+    "kana": "まがります",
+    "romaji": "magarimasu",
+    "meaning": "彎曲、轉彎（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "汚れます",
+    "kana": "よごれます",
+    "romaji": "yogoremasu",
+    "meaning": "變髒（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "乾きます",
+    "kana": "かわきます",
+    "romaji": "kawakimasu",
+    "meaning": "乾燥（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "濡れます",
+    "kana": "ぬれます",
+    "romaji": "nuremasu",
+    "meaning": "濕掉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "消えます",
+    "kana": "きえます",
+    "romaji": "kiemasu",
+    "meaning": "消失、熄滅（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "閉まります",
+    "kana": "しまります",
+    "romaji": "shimarimasu",
+    "meaning": "關閉（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "開きます",
+    "kana": "あきます",
+    "romaji": "akimasu",
+    "meaning": "打開（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "倒れます",
+    "kana": "たおれます",
+    "romaji": "taoremasu",
+    "meaning": "倒下（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "増えます",
+    "kana": "ふえます",
+    "romaji": "fuemasu",
+    "meaning": "增加（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "減ります",
+    "kana": "へります",
+    "romaji": "herimasu",
+    "meaning": "減少（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "続きます",
+    "kana": "つづきます",
+    "romaji": "tsuzukimasu",
+    "meaning": "持續（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "止まります",
+    "kana": "とまります",
+    "romaji": "tomarimasu",
+    "meaning": "停止（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "動きます",
+    "kana": "うごきます",
+    "romaji": "ugokimasu",
+    "meaning": "移動、運作（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "揺れます",
+    "kana": "ゆれます",
+    "romaji": "yuremasu",
+    "meaning": "搖晃（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "変わります",
+    "kana": "かわります",
+    "romaji": "kawarimasu",
+    "meaning": "改變（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "消します",
+    "kana": "けします",
+    "romaji": "keshimasu",
+    "meaning": "關掉、抹去（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "閉じます",
+    "kana": "とじます",
+    "romaji": "tojimasu",
+    "meaning": "闔上、關閉（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "浮かびます",
+    "kana": "うかびます",
+    "romaji": "ukabimasu",
+    "meaning": "浮起（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "沈みます",
+    "kana": "しずみます",
+    "romaji": "shizumimasu",
+    "meaning": "沉沒（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "映ります",
+    "kana": "うつります",
+    "romaji": "utsurimasu",
+    "meaning": "映出、反射（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "揃います",
+    "kana": "そろいます",
+    "romaji": "soroimasu",
+    "meaning": "齊全（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "離れます",
+    "kana": "はなれます",
+    "romaji": "hanaremasu",
+    "meaning": "分開、離開（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "繋がります",
+    "kana": "つながります",
+    "romaji": "tsunagarimasu",
+    "meaning": "連接（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "冷えます",
+    "kana": "ひえます",
+    "romaji": "hiemasu",
+    "meaning": "變冷（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "温まります",
+    "kana": "あたたまります",
+    "romaji": "atatamarimasu",
+    "meaning": "變溫暖（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "増やします",
+    "kana": "ふやします",
+    "romaji": "fuyashimasu",
+    "meaning": "增加（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "減らします",
+    "kana": "へらします",
+    "romaji": "herashimasu",
+    "meaning": "減少（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "許可します",
+    "kana": "きょかします",
+    "romaji": "kyoka shimasu",
+    "meaning": "許可（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "紹介します",
+    "kana": "しょうかいします",
+    "romaji": "shoukai shimasu",
+    "meaning": "介紹（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "訪問します",
+    "kana": "ほうもんします",
+    "romaji": "houmon shimasu",
+    "meaning": "訪問（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "発見します",
+    "kana": "はっけんします",
+    "romaji": "hakken shimasu",
+    "meaning": "發現（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "発明します",
+    "kana": "はつめいします",
+    "romaji": "hatsumei shimasu",
+    "meaning": "發明（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "回ります",
+    "kana": "まわります",
+    "romaji": "mawarimasu",
+    "meaning": "旋轉（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "伝えます",
+    "kana": "つたえます",
+    "romaji": "tsutaemasu",
+    "meaning": "傳達（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "試みます",
+    "kana": "こころみます",
+    "romaji": "kokoromimasu",
+    "meaning": "嘗試（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "打ちます",
+    "kana": "うちます",
+    "romaji": "uchimasu",
+    "meaning": "擊打（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "投げます",
+    "kana": "なげます",
+    "romaji": "nagemasu",
+    "meaning": "投擲（第二類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "踏みます",
+    "kana": "ふみます",
+    "romaji": "fumimasu",
+    "meaning": "踩（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "突きます",
+    "kana": "つきます",
+    "romaji": "tsukimasu",
+    "meaning": "刺、戳（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "噛みます",
+    "kana": "かみます",
+    "romaji": "kamimasu",
+    "meaning": "咬（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "誓います",
+    "kana": "ちかいます",
+    "romaji": "chikaimasu",
+    "meaning": "發誓（第一類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "約束します",
+    "kana": "やくそくします",
+    "romaji": "yakusoku shimasu",
+    "meaning": "約定（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "試験します",
+    "kana": "しけんします",
+    "romaji": "shiken shimasu",
+    "meaning": "測試（第三類動詞）"
+  },
+  {
+    "type": "平假名",
+    "kanji": "証明します",
+    "kana": "しょうめいします",
+    "romaji": "shoumei shimasu",
+    "meaning": "證明（第三類動詞）"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コンピューター",
+    "romaji": "konpyuutaa",
+    "meaning": "電腦"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "テレビ",
+    "romaji": "terebi",
+    "meaning": "電視"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ラジオ",
+    "romaji": "rajio",
+    "meaning": "收音機"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "エレベーター",
+    "romaji": "erebeetaa",
+    "meaning": "電梯"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "エスカレーター",
+    "romaji": "esukareetaa",
+    "meaning": "手扶梯"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "タクシー",
+    "romaji": "takushii",
+    "meaning": "計程車"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "バス",
+    "romaji": "basu",
+    "meaning": "公車"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ホテル",
+    "romaji": "hoteru",
+    "meaning": "飯店"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "レストラン",
+    "romaji": "resutoran",
+    "meaning": "餐廳"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コーヒー",
+    "romaji": "koohii",
+    "meaning": "咖啡"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ジュース",
+    "romaji": "juusu",
+    "meaning": "果汁"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "サンドイッチ",
+    "romaji": "sandoicchi",
+    "meaning": "三明治"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ハンバーガー",
+    "romaji": "hanbaagaa",
+    "meaning": "漢堡"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アイスクリーム",
+    "romaji": "aisukuriimu",
+    "meaning": "冰淇淋"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ケーキ",
+    "romaji": "keeki",
+    "meaning": "蛋糕"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "メール",
+    "romaji": "meeru",
+    "meaning": "電子郵件"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スマホ",
+    "romaji": "sumaho",
+    "meaning": "智慧型手機"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アプリ",
+    "romaji": "apuri",
+    "meaning": "應用程式"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ゲーム",
+    "romaji": "geemu",
+    "meaning": "遊戲"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "インターネット",
+    "romaji": "intaanetto",
+    "meaning": "網際網路"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コンビニ",
+    "romaji": "konbini",
+    "meaning": "便利商店"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スーパー",
+    "romaji": "suupaa",
+    "meaning": "超級市場"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "デパート",
+    "romaji": "depaato",
+    "meaning": "百貨公司"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ショップ",
+    "romaji": "shoppu",
+    "meaning": "商店"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アクセサリー",
+    "romaji": "akusesarii",
+    "meaning": "飾品、配件"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ファッション",
+    "romaji": "fasshon",
+    "meaning": "時尚"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ブランド",
+    "romaji": "burando",
+    "meaning": "品牌"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "バッグ",
+    "romaji": "baggu",
+    "meaning": "包包"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "シューズ",
+    "romaji": "shuuzu",
+    "meaning": "鞋子"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スポーツ",
+    "romaji": "supootsu",
+    "meaning": "運動"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "テニス",
+    "romaji": "tenisu",
+    "meaning": "網球"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "サッカー",
+    "romaji": "sakkaa",
+    "meaning": "足球"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "バスケットボール",
+    "romaji": "basukettobooru",
+    "meaning": "籃球"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ゴルフ",
+    "romaji": "gorufu",
+    "meaning": "高爾夫"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "トレーニング",
+    "romaji": "toreeningu",
+    "meaning": "訓練、健身"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ダンス",
+    "romaji": "dansu",
+    "meaning": "舞蹈"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ライブ",
+    "romaji": "raibu",
+    "meaning": "現場表演、演唱會"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ミュージック",
+    "romaji": "myuujikku",
+    "meaning": "音樂"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アルバム",
+    "romaji": "arubamu",
+    "meaning": "專輯、相簿"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "チケット",
+    "romaji": "chiketto",
+    "meaning": "票、門票"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ホステル",
+    "romaji": "hosuteru",
+    "meaning": "青年旅館"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "チェックイン",
+    "romaji": "chekku in",
+    "meaning": "辦理入住"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "チェックアウト",
+    "romaji": "chekku auto",
+    "meaning": "辦理退房"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "レシート",
+    "romaji": "reshiito",
+    "meaning": "收據"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "クレジットカード",
+    "romaji": "kurejitto kaado",
+    "meaning": "信用卡"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "キャッシュ",
+    "romaji": "kyasshu",
+    "meaning": "現金"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "レート",
+    "romaji": "reeto",
+    "meaning": "匯率"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "トラベル",
+    "romaji": "toraberu",
+    "meaning": "旅遊"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "パスポート",
+    "romaji": "pasupooto",
+    "meaning": "護照"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ビザ",
+    "romaji": "biza",
+    "meaning": "簽證"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ガイド",
+    "romaji": "gaido",
+    "meaning": "導遊"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ツアー",
+    "romaji": "tsuaa",
+    "meaning": "旅行團、導覽"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "リラックス",
+    "romaji": "rirakkusu",
+    "meaning": "放鬆"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ストレス",
+    "romaji": "sutoresu",
+    "meaning": "壓力"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コンディション",
+    "romaji": "kondishon",
+    "meaning": "狀態、情況"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "サプリメント",
+    "romaji": "sapurimento",
+    "meaning": "保健食品、補充品"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "エナジードリンク",
+    "romaji": "enajii dorinku",
+    "meaning": "能量飲料"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "カロリー",
+    "romaji": "karorii",
+    "meaning": "卡路里"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "プロテイン",
+    "romaji": "purotein",
+    "meaning": "蛋白質"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ビタミン",
+    "romaji": "bitamin",
+    "meaning": "維他命"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ミネラル",
+    "romaji": "mineraru",
+    "meaning": "礦物質"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "フィットネス",
+    "romaji": "fittonesu",
+    "meaning": "健身"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ヨガ",
+    "romaji": "yoga",
+    "meaning": "瑜伽"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "マッサージ",
+    "romaji": "massaaji",
+    "meaning": "按摩"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スパ",
+    "romaji": "supa",
+    "meaning": "溫泉、水療"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "カメラ",
+    "romaji": "kamera",
+    "meaning": "相機"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ビデオ",
+    "romaji": "bideo",
+    "meaning": "錄影機、影片"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ヘッドホン",
+    "romaji": "heddohon",
+    "meaning": "耳機"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "マイク",
+    "romaji": "maiku",
+    "meaning": "麥克風"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "キーボード",
+    "romaji": "kiiboodo",
+    "meaning": "鍵盤"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "マウス",
+    "romaji": "mausu",
+    "meaning": "滑鼠"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "プリンター",
+    "romaji": "purintaa",
+    "meaning": "印表機"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "プロジェクター",
+    "romaji": "purojekutaa",
+    "meaning": "投影機"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ドライブ",
+    "romaji": "doraibu",
+    "meaning": "駕車兜風"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "オートバイ",
+    "romaji": "ootobai",
+    "meaning": "摩托車"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "フェリー",
+    "romaji": "ferii",
+    "meaning": "渡輪"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "パイロット",
+    "romaji": "pairotto",
+    "meaning": "飛行員"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "チョコレート",
+    "romaji": "chokoreeto",
+    "meaning": "巧克力"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スイーツ",
+    "romaji": "suiitsu",
+    "meaning": "甜點"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ドーナツ",
+    "romaji": "doonatsu",
+    "meaning": "甜甜圈"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ピザ",
+    "romaji": "piza",
+    "meaning": "披薩"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "パスタ",
+    "romaji": "pasuta",
+    "meaning": "義大利麵"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ステーキ",
+    "romaji": "suteeki",
+    "meaning": "牛排"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ワイン",
+    "romaji": "wain",
+    "meaning": "葡萄酒"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ビール",
+    "romaji": "biiru",
+    "meaning": "啤酒"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "カクテル",
+    "romaji": "kakuteru",
+    "meaning": "雞尾酒"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "タバコ",
+    "romaji": "tabako",
+    "meaning": "香菸"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ソファ",
+    "romaji": "sofa",
+    "meaning": "沙發"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "カーテン",
+    "romaji": "kaaten",
+    "meaning": "窗簾"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ベッド",
+    "romaji": "beddo",
+    "meaning": "床"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "クッション",
+    "romaji": "kusshon",
+    "meaning": "抱枕"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ペン",
+    "romaji": "pen",
+    "meaning": "筆"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ノート",
+    "romaji": "nooto",
+    "meaning": "筆記本"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ファイル",
+    "romaji": "fairu",
+    "meaning": "文件、檔案"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "メモ",
+    "romaji": "memo",
+    "meaning": "備忘錄"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コピー",
+    "romaji": "kopii",
+    "meaning": "影印、副本"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アルバイト",
+    "romaji": "arubaito",
+    "meaning": "打工"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ビジネス",
+    "romaji": "bijinesu",
+    "meaning": "商業"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "プロジェクト",
+    "romaji": "purojekuto",
+    "meaning": "專案"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "プレゼン",
+    "romaji": "purezen",
+    "meaning": "簡報"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "リーダー",
+    "romaji": "riidaa",
+    "meaning": "領導者"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "オフィス",
+    "romaji": "ofisu",
+    "meaning": "辦公室"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ミーティング",
+    "romaji": "miitingu",
+    "meaning": "會議"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "イベント",
+    "romaji": "ibento",
+    "meaning": "活動、事件"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "パーティー",
+    "romaji": "paatii",
+    "meaning": "派對"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ショッピング",
+    "romaji": "shoppingu",
+    "meaning": "購物"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "セール",
+    "romaji": "seeru",
+    "meaning": "促銷、特賣"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ギフト",
+    "romaji": "gifuto",
+    "meaning": "禮物"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "オープン",
+    "romaji": "oopun",
+    "meaning": "開放、開業"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "クローズ",
+    "romaji": "kurouzu",
+    "meaning": "關閉、結束"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ニュース",
+    "romaji": "nyuusu",
+    "meaning": "新聞"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "マスコミ",
+    "romaji": "masukomi",
+    "meaning": "媒體、大眾傳播"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "レポート",
+    "romaji": "repooto",
+    "meaning": "報告、報導"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アンケート",
+    "romaji": "ankeeto",
+    "meaning": "問卷調查"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "レビュー",
+    "romaji": "rebyuu",
+    "meaning": "評論、回顧"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ランキング",
+    "romaji": "rankingu",
+    "meaning": "排行榜"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "トップ",
+    "romaji": "toppu",
+    "meaning": "第一、頂端"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "テーマ",
+    "romaji": "teema",
+    "meaning": "主題"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スタイル",
+    "romaji": "sutairu",
+    "meaning": "風格"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コーディネート",
+    "romaji": "koodeineeto",
+    "meaning": "搭配、協調"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "アクセント",
+    "romaji": "akusento",
+    "meaning": "重點、口音"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "メイク",
+    "romaji": "meiku",
+    "meaning": "化妝"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ネイル",
+    "romaji": "neiru",
+    "meaning": "指甲、指甲彩繪"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ヘアスタイル",
+    "romaji": "heasutairu",
+    "meaning": "髮型"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "トレンド",
+    "romaji": "torendo",
+    "meaning": "潮流、趨勢"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "スケジュール",
+    "romaji": "sukejuuru",
+    "meaning": "行程、時間表"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "プラン",
+    "romaji": "puran",
+    "meaning": "計畫、方案"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "タスク",
+    "romaji": "tasuku",
+    "meaning": "任務、工作"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "コンセプト",
+    "romaji": "konseputo",
+    "meaning": "概念"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ミッション",
+    "romaji": "misshon",
+    "meaning": "使命、目標"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "リスク",
+    "romaji": "risuku",
+    "meaning": "風險"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "チャレンジ",
+    "romaji": "charenji",
+    "meaning": "挑戰"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ポジティブ",
+    "romaji": "pojitibu",
+    "meaning": "正向、積極"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "ネガティブ",
+    "romaji": "negatibu",
+    "meaning": "負面、消極"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "エネルギー",
+    "romaji": "enerugii",
+    "meaning": "能量、精力"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "モチベーション",
+    "romaji": "mochibeeshon",
+    "meaning": "動機、幹勁"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "フィードバック",
+    "romaji": "fiidobakku",
+    "meaning": "回饋、反饋"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "シンプル",
+    "romaji": "shinpuru",
+    "meaning": "簡單、簡約"
+  },
+  {
+    "type": "片假名",
+    "kanji": "",
+    "kana": "クオリティ",
+    "romaji": "kuoriti",
+    "meaning": "品質"
+  }
 ]
-  
