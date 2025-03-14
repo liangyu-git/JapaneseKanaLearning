@@ -133,12 +133,12 @@ export default function Page() {
       resultFeedback = `錯誤！正確答案是： ${current.romaji}`;
       setLastAnswerCorrect(false);
       if (phase === "practice") {
-        setIncorrectList((prev) => [...prev, { question: current, userAnswer }]);
+        setIncorrectList((prev) => [...prev, { question: current, userAnswer: userAns }]);
       } else if (phase === "repractice") {
         // Update latest answer for the reattempted word.
         setIncorrectList((prev) =>
           prev.map((item) =>
-            item.question.romaji === current.romaji ? { question: current, userAnswer } : item
+            item.question.romaji === current.romaji ? { question: current, userAnswer: userAns } : item
           )
         );
       }
