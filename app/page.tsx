@@ -118,8 +118,7 @@ export default function Page() {
     setTimeout(() => inputRef.current?.focus(), 0);
   };
 
-  // Normalize function to handle romanization alternatives could be added here if needed
-
+  // Check the answer and update feedback (for practice & repractice)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const checkAnswer = () => {
     if (!sessionQuestions[currentIndex]) return;
@@ -306,6 +305,18 @@ export default function Page() {
   const feedbackColor =
     feedback.startsWith("正確") ? "#008000" : feedback.startsWith("錯誤") ? "#FF0000" : "#000";
 
+  // Updated style for feedback card with a pretty frame.
+  const feedbackCardStyle = {
+    fontSize: "1.5em",
+    margin: "20px 0",
+    color: feedbackColor,
+    whiteSpace: "pre-line" as const,
+    border: "2px solid #0070f3",
+    borderRadius: "8px",
+    padding: "10px",
+    backgroundColor: "#eaf2ff",
+  };
+
   return (
     <div style={mainContainerStyle}>
       <div style={tipStyle}>
@@ -414,15 +425,7 @@ export default function Page() {
             </button>
           </div>
           {showAnswer && (
-            <div
-              className="feedback-animation"
-              style={{
-                fontSize: "1.5em",
-                margin: "20px 0",
-                color: feedbackColor,
-                whiteSpace: "pre-line",
-              }}
-            >
+            <div className="feedback-animation" style={feedbackCardStyle}>
               {feedback}
               <br />
               {sessionQuestions[currentIndex].kanji ? (
@@ -550,15 +553,7 @@ export default function Page() {
             </button>
           </div>
           {showAnswer && (
-            <div
-              className="feedback-animation"
-              style={{
-                fontSize: "1.5em",
-                margin: "20px 0",
-                color: feedbackColor,
-                whiteSpace: "pre-line",
-              }}
-            >
+            <div className="feedback-animation" style={feedbackCardStyle}>
               {feedback}
               <br />
               {sessionQuestions[currentIndex].kanji ? (
