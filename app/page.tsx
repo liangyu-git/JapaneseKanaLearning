@@ -305,7 +305,7 @@ export default function Page() {
   const feedbackColor =
     feedback.startsWith("正確") ? "#008000" : feedback.startsWith("錯誤") ? "#FF0000" : "#000";
 
-  // Updated style for feedback card with a pretty frame.
+  // Updated style for feedback card with a pretty frame that only shows the word details.
   const feedbackCardStyle = {
     fontSize: "1.5em",
     margin: "20px 0",
@@ -426,8 +426,6 @@ export default function Page() {
           </div>
           {showAnswer && (
             <div className="feedback-animation" style={feedbackCardStyle}>
-              {feedback}
-              <br />
               {sessionQuestions[currentIndex].kanji ? (
                 <>
                   {sessionQuestions[currentIndex].kana}
@@ -554,8 +552,6 @@ export default function Page() {
           </div>
           {showAnswer && (
             <div className="feedback-animation" style={feedbackCardStyle}>
-              {feedback}
-              <br />
               {sessionQuestions[currentIndex].kanji ? (
                 <>
                   {sessionQuestions[currentIndex].kana}
