@@ -15,8 +15,14 @@ type IncorrectItem = {
   userAnswer: string;
 };
 
+type Firework = {
+  top: number;
+  left: number;
+  delay: number;
+};
+
 export default function Page() {
-  // Phases: modeSelection, setup, practice, review, and repractice
+  // Phases: modeSelection, setup, practice, review, repractice
   const [phase, setPhase] = useState<string>("modeSelection");
   const [mode, setMode] = useState<string>("");
   const [data, setData] = useState<Word[]>([]);
@@ -30,6 +36,7 @@ export default function Page() {
   const [questionCountInput, setQuestionCountInput] = useState<string>("");
   const [confirmDisabled, setConfirmDisabled] = useState<boolean>(false);
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(null);
+  const [fireworksPositions, setFireworksPositions] = useState<Firework[]>([]);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -41,13 +48,29 @@ export default function Page() {
       .catch((err) => console.error("Error loading data.json:", err));
   }, []);
 
+  // Generate fireworks positions when review phase is reached with no incorrect answers.
+  useEffect(() => {
+    if (phase === "review" && incorrectList.length === 0) {
+      const count = 10;
+      const positions: Firework[] = Array.from({ length: count }, () => ({
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        delay: Math.random() * 1,
+      }));
+      setFireworksPositions(positions);
+    }
+  }, [phase, incorrectList]);
+
   // Helper: highlight differences between user answer and correct answer
   function highlightDiff(user: string, correct: string): React.ReactElement {
+    // Remove all whitespace from both strings
+    const cleanUser = user.replace(/\s+/g, "");
+    const cleanCorrect = correct.replace(/\s+/g, "");
     const result = [];
-    const len = Math.max(user.length, correct.length);
+    const len = Math.max(cleanUser.length, cleanCorrect.length);
     for (let i = 0; i < len; i++) {
-      const uChar = user[i] || "";
-      const cChar = correct[i] || "";
+      const uChar = cleanUser[i] || "";
+      const cChar = cleanCorrect[i] || "";
       if (uChar.toLowerCase() === cChar.toLowerCase()) {
         result.push(<span key={i}>{uChar}</span>);
       } else {
@@ -95,12 +118,13 @@ export default function Page() {
     setTimeout(() => inputRef.current?.focus(), 0);
   };
 
-  // Check the answer and update feedback (differs for practice and repractice)
+  // Check the answer and update feedback (for practice & repractice)
   const checkAnswer = () => {
     if (!sessionQuestions[currentIndex]) return;
     const current = sessionQuestions[currentIndex];
-    const userAns = userInput.trim().toLowerCase();
-    const correct = current.romaji.toLowerCase();
+    // Remove all whitespace before comparing
+    const userAns = userInput.replace(/\s+/g, "").toLowerCase();
+    const correct = current.romaji.replace(/\s+/g, "").toLowerCase();
     let resultFeedback = "";
     if (userAns === correct) {
       resultFeedback = "正確！";
@@ -109,12 +133,12 @@ export default function Page() {
       resultFeedback = `錯誤！正確答案是： ${current.romaji}`;
       setLastAnswerCorrect(false);
       if (phase === "practice") {
-        setIncorrectList((prev) => [...prev, { question: current, userAnswer: userInput }]);
+        setIncorrectList((prev) => [...prev, { question: current, userAnswer }]);
       } else if (phase === "repractice") {
         // Update latest answer for the reattempted word.
         setIncorrectList((prev) =>
           prev.map((item) =>
-            item.question.romaji === current.romaji ? { question: current, userAnswer: userInput } : item
+            item.question.romaji === current.romaji ? { question: current, userAnswer } : item
           )
         );
       }
@@ -124,11 +148,11 @@ export default function Page() {
     setConfirmDisabled(true);
   };
 
-  // Proceed to the next question or end session
+  // Proceed to next question or end session
   const nextQuestion = () => {
     if (phase === "repractice") {
       if (lastAnswerCorrect) {
-        // Remove correctly answered question from sessionQuestions and incorrectList
+        // Remove correctly answered word from session and incorrect list.
         const newSession = sessionQuestions.filter((_, idx) => idx !== currentIndex);
         setSessionQuestions(newSession);
         setIncorrectList((prev) =>
@@ -141,7 +165,7 @@ export default function Page() {
           setCurrentIndex(0);
         }
       } else {
-        // If wrong, simply move to next (cycle through questions)
+        // If wrong, simply move to next (cycle through)
         setCurrentIndex((prev) => (prev + 1) % sessionQuestions.length);
       }
       setUserInput("");
@@ -166,7 +190,7 @@ export default function Page() {
     setTimeout(() => inputRef.current?.focus(), 0);
   };
 
-  // Early exit from practice: go directly to review phase
+  // Early exit from practice: directly go to review phase
   const earlyExit = () => {
     setPhase("review");
   };
@@ -202,9 +226,9 @@ export default function Page() {
     setLastAnswerCorrect(null);
   };
 
-  // Handle keyboard events: Enter or Space to check answer or go next
+  // Handle keyboard events: only respond to Enter key.
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" || e.key === " ") {
+    if (e.key === "Enter") {
       e.preventDefault();
       if (!showAnswer && !confirmDisabled) {
         checkAnswer();
@@ -276,7 +300,7 @@ export default function Page() {
     zIndex: 1000,
   };
 
-  // Determine feedback color (for animation): green if correct, red if incorrect
+  // Determine feedback color: green if correct, red if incorrect
   const feedbackColor =
     feedback.startsWith("正確") ? "#008000" : feedback.startsWith("錯誤") ? "#FF0000" : "#000";
 
@@ -285,6 +309,24 @@ export default function Page() {
       <div style={tipStyle}>
         提示：可多練習熟悉羅馬拼音，按 Enter 確認答案及進入下一題
       </div>
+
+      {/* Fireworks overlay for perfect session in review phase */}
+      {phase === "review" && incorrectList.length === 0 && (
+        <div className="fireworks-container">
+          {fireworksPositions.map((pos, index) => (
+            <div
+              key={index}
+              className="firework"
+              style={{
+                top: `${pos.top}%`,
+                left: `${pos.left}%`,
+                animationDelay: `${pos.delay}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
+
       {phase === "modeSelection" && (
         <div style={containerStyle}>
           <h1>選擇學習模式</h1>
@@ -550,6 +592,37 @@ export default function Page() {
         }
         .feedback-animation {
           animation: fadeInScale 0.5s ease-in-out;
+        }
+        @keyframes pop {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.5);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+        }
+        .fireworks-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 3000;
+        }
+        .firework {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background: radial-gradient(circle, yellow, red);
+          border-radius: 50%;
+          animation: pop 1.5s infinite;
         }
       `}</style>
     </div>
