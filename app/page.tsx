@@ -21,6 +21,18 @@ type Firework = {
   delay: number;
 };
 
+// Helper: Normalize romanization alternatives so that equivalent inputs match
+function normalizeRomaji(input: string): string {
+  return input
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/shi/g, "si")
+    .replace(/chi/g, "ti")
+    .replace(/tsu/g, "tu")
+    .replace(/fu/g, "hu")
+    .replace(/ji/g, "zi");
+}
+
 export default function Page() {
   // Phases: modeSelection, setup, practice, review, repractice
   const [phase, setPhase] = useState<string>("modeSelection");
@@ -123,23 +135,23 @@ export default function Page() {
   const checkAnswer = () => {
     if (!sessionQuestions[currentIndex]) return;
     const current = sessionQuestions[currentIndex];
-    // Remove all whitespace before comparing and convert to lowercase
-    const userAns = userInput.replace(/\s+/g, "").toLowerCase();
-    const correct = current.romaji.replace(/\s+/g, "").toLowerCase();
+    // Normalize both user input and correct answer for comparison
+    const normUser = normalizeRomaji(userInput);
+    const normCorrect = normalizeRomaji(current.romaji);
     let resultFeedback = "";
-    if (userAns === correct) {
+    if (normUser === normCorrect) {
       resultFeedback = "正確！";
       setLastAnswerCorrect(true);
     } else {
       resultFeedback = `錯誤！正確答案是： ${current.romaji}`;
       setLastAnswerCorrect(false);
       if (phase === "practice") {
-        setIncorrectList((prev) => [...prev, { question: current, userAnswer: userAns }]);
+        setIncorrectList((prev) => [...prev, { question: current, userAnswer: normUser }]);
       } else if (phase === "repractice") {
         // Update latest answer for the reattempted word.
         setIncorrectList((prev) =>
           prev.map((item) =>
-            item.question.romaji === current.romaji ? { question: current, userAnswer: userAns } : item
+            item.question.romaji === current.romaji ? { question: current, userAnswer: normUser } : item
           )
         );
       }
@@ -313,7 +325,7 @@ export default function Page() {
     fontWeight: "bold",
   };
 
-  // Updated style for feedback card with a pretty frame that only shows word details.
+  // Style for feedback card that shows only word details
   const feedbackCardStyle = {
     fontSize: "1.5em",
     margin: "20px 0",
